@@ -15,9 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Admin Dashboard
+// Admin Dashboard //
+//Admin page
 Route::resource('dashboard', 'admin_Controller');
 
-//Website
+// Website //
+//index page
 Route::get('zone','zone_Controller@index')->name('zone');
+
+//tour packages page
 Route::get('/packages','zone_Controller@packages')->name('packages');
