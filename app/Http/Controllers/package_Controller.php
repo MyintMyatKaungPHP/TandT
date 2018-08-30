@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\packages\cities;
 use App\packages\packages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class package_Controller extends Controller
@@ -81,7 +82,8 @@ class package_Controller extends Controller
      */
     public function show($id)
     {
-        //
+        $package = packages::find($id);
+        return view('dashboard.tour_packages.detail',compact('package'));
     }
 
     /**
@@ -116,8 +118,11 @@ class package_Controller extends Controller
     public function destroy($id)
     {
         $package = packages::find($id);
-        $package->del_status = '1';
-        $package->save();
+        $image_arr = explode(',',$package->images);
+        foreach ($image_arr as $i){
+            File::delete('images/tour/'.$i);
+        }
+        $package->delete();
         return redirect(route('manage_package.index'))->with('status','Tour Package Deleting Successfully!');
     }
 }

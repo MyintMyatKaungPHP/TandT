@@ -32,3 +32,4 @@ Route::get('/packages','zone_Controller@packages')->name('packages');
 
 //package detail page
 Route::get('/package_detail/{id}','zone_Controller@package_detail')->name('package_detail');
+
