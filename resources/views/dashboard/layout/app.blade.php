@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Cinema Ticketing">
-    <title>Dashboard - Travel & Tour Agency</title>
+    <title>Dashboard - Travels & Tours Agency</title>
     <!-- =============== VENDOR STYLES ===============-->
     <!-- FONT AWESOME-->
     <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/font-awesome/css/font-awesome.css')}}">
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('dashboard_asset/css/bootstrap.css')}}" id="bscss">
     <!-- =============== APP STYLES ===============-->
     <link rel="stylesheet" href="{{asset('dashboard_asset/css/app.css')}}" id="maincss">
+    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
     @yield('css')
 </head>
 
@@ -32,10 +33,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="" style="color: black;">
                     <div class="brand-logo">
-                        Travel & Tour Agency
+                        Zone Travels & Tours
                     </div>
                     <div class="brand-logo-collapsed">
-                        <img class="img-fluid" src="{{asset('dashboard_asset/img/logo-single.png')}}" alt="App Logo">
+                        <img class="img-fluid" src="{{asset('images/favicon.ico')}}" alt="App Logo">
                     </div>
                 </a>
             </div>
@@ -137,13 +138,6 @@
                     <!-- END Dropdown menu-->
                 </li>
                 <!-- END Alert menu-->
-                <!-- START Offsidebar button-->
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
-                        <em class="icon-notebook"></em>
-                    </a>
-                </li>
-                <!-- END Offsidebar menu-->
             </ul>
             <!-- END Right Navbar-->
             <!-- START Search form-->
@@ -160,15 +154,13 @@
     </header>
     <!-- sidebar-->
     @include('dashboard.layout.sidebar')
-    <!-- offsidebar-->
-    @include('dashboard.layout.offsidebar')
     <!-- Main section-->
     <section class="section-container">
         @yield('content')
     </section>
     <!-- Page footer-->
     <footer class="footer-container">
-        <span>&copy; 2018 - Angle</span>
+        <span>&copy; 2018 - Zone Travels & Tours</span>
     </footer>
 </div>
 <!-- =============== VENDOR SCRIPTS ===============-->

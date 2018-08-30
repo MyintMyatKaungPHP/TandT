@@ -40,13 +40,34 @@ function showToggle($str){
                 </li>
                 {{--For Dashboard--}}
                 <li class=" @php echo  showToggle('dashboard'); @endphp">
-                    <a href="{{route('dashboard.index')}}" title="Documentation">
+                    <a href="{{route('dashboard')}}" title="Dashboard">
                         <em class="icon-speedometer"></em>
                         <span data-localize="sidebar.nav.DOCUMENTATION">Dashboard</span>
                     </a>
                 </li>
-                {{-- Other Link Here --}}
-                
+
+                {{-- To Tour Packages --}}
+                <li class=" ">
+                    <a href="#tourpackages" title="TourPackages" data-toggle="collapse">
+                        <em class="icon-graph"></em>
+                        <span data-localize="sidebar.nav.TourPackages">Tour Packages</span>
+                        <span class="fa fa-sort-down ml-4"></span>
+                    </a>
+                    <ul class="sidebar-nav sidebar-subnav collapse @php echo  showToggle('tourpackages'); @endphp"  id="tourpackages">
+                        <li class="sidebar-subnav-header">Tour Packages</li>
+                        <li class="@php echo  showToggle('manage_city'); @endphp">
+                            <a href="{{route('manage_city.index')}}" title="City">
+                                <span>Manage City</span>
+                            </a>
+                        </li>
+                        <li class="@php echo  showToggle('manage_package'); @endphp">
+                            <a href="{{route('manage_package.index')}}" title="TourPackages">
+                                <span>Manage Tour Packages</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 {{-- Go To Website (front-end) --}}
                 <li class="nav-heading ">
                     <span data-localize="sidebar.heading.HEADER">Go To Website</span>

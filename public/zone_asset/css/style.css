@@ -1356,7 +1356,8 @@ input.zt-control, select.zt-control {
   line-height: inherit !important; }
 
 textarea.zt-control {
-  height: 150px; }
+  height: 150px;
+}
 
 .form-group {
   margin-bottom: 30px;

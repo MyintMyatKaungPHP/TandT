@@ -1,7 +1,24 @@
 @extends('zone.layout.app')
-@section('title','Zone | Home')
+@section('title','Zone | Travels & Tours')
 @section('content')
       @include('zone.layout.banner')
+      {{--Search--}}
+      <section class="filter-tour">
+         <div class="filter-wrap">
+            <form class="form-inline filter-box">
+               <div class="form-group">
+                  <b>Where you want to travel?</b>
+                  <select name="city" class="zt-control">
+                     <option value="yangon">Yangon</option>
+                     <option value="hawaii">Hawaii</option>
+                  </select>
+                  <span class="select-arrow"></span>
+               </div>
+               <button type="submit" class="btn zt-primary btn-lg">Search</button>
+            </form>
+         </div>
+      </section>
+      {{--Vision Mision--}}
       <section class="choose-tour sec-padding sec-padding-top-large">
          <div class="zt-container">
             <div class="sec-title text-center sec-title-padding">
@@ -46,6 +63,7 @@
             </div>
          </div>
       </section>
+      {{--Profile Video--}}
       <section class="video-tour sec-padding sec-bg-default">
          <div class="zt-container">
             <div class="row">
@@ -76,252 +94,249 @@
             </div>
          </div>
       </section>
-      <section class="popular-services sec-padding">
+
+      {{--Special Tour Packages--}}
+      <section class="latest-news sec-padding-top even">
          <div class="zt-container">
             <div class="sec-title text-center sec-title-padding">
-               <h2>Latest Tour Packages</h2>
-               <span class="tagline">Quisque venenatis porta eleifend. Phasellus vehicula malesuada quam, a condimentum mauris dignissim vulputate.</span>
+               <h2>Special Tour Packages</h2>
+               <span class="tagline">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</span>
                <span class="img-border"></span>
             </div>
             <div class="row">
-               <div class="col-md-4 col-sm-6 col-xs-6">
-                  <div class="tour-list-box text-center zt-overlay zt-overlay-hover">
-                     <div class="img-box position-relative">
-                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-slide-top zt-flex zt-flex-center zt-flex-middle text-center">
-                           <a href="#" class="btn zt-default btn-lg">Book Now</a>
-                        </div>
-                        <img src="{{asset('images/thumbnails/toronto.jpg')}}" alt=""/>
+               <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="single-latest-news">
+                     <div class="img-box">
+                        <img src="images/blog/sweet-ont-the-beach.png" alt=""/>
                      </div>
-                     <div class="box-content">
-                        <h3>TORONTO</h3>
-                        <div class="rating">
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star"></span>
-                        </div>
-                        <div class="driver"></div>
-                        <span class="duration">Duration: 2 Hours <br/> Opening: 8Am - 10Am</span>
+                     <div class="text-box position-relative">
+                        <span class="angle-up"></span>
+                        <h3>Sweet Love On The Beach</h3>
+                        <p>Honey Moon</p>
+                        <a href="#" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
                      </div>
                   </div>
                </div>
-               <div class="col-md-4 col-sm-6 col-xs-6">
-                  <div class="tour-list-box text-center zt-overlay zt-overlay-hover">
-                     <div class="img-box position-relative">
-                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-slide-top zt-flex zt-flex-center zt-flex-middle text-center">
-                           <a href="#" class="btn zt-default btn-lg">Book Now</a>
-                        </div>
-                        <img src="{{asset('images/thumbnails/mumbai.jpg')}}" alt=""/>
+               <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="single-latest-news">
+                     <div class="img-box">
+                        <img src="images/blog/cool-place-visit-full-house.png" alt=""/>
                      </div>
-                     <div class="box-content">
-                        <h3>MUMBAI</h3>
-                        <div class="rating">
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star"></span>
-                        </div>
-                        <div class="driver"></div>
-                        <span class="duration">Duration: 2 Hours <br/> Opening: 8Am - 10Am</span>
+                     <div class="text-box position-relative">
+                        <span class="angle-up"></span>
+                        <h3>Central Myanmar Trip</h3>
+                        <p>Etiam mattis, tortor non tincidunt euismod, ipsum arcu condimentum ligula, at ornare dolor turpis id massa. Ut sit amet augue lobortis lacus scelerisque volutpat.</p>
+                        <a href="#" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
                      </div>
                   </div>
                </div>
-               <div class="col-md-4 col-sm-6 col-xs-6">
-                  <div class="tour-list-box text-center zt-overlay zt-overlay-hover">
-                     <div class="img-box position-relative">
-                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-slide-top zt-flex zt-flex-center zt-flex-middle text-center">
-                           <a href="#" class="btn zt-default btn-lg">Book Now</a>
-                        </div>
-                        <img src="{{asset('images/thumbnails/sydney.jpg')}}" alt=""/>
+               <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="single-latest-news">
+                     <div class="img-box">
+                        <img src="images/blog/color-aloft-balloon-festivan.png" alt=""/>
                      </div>
-                     <div class="box-content">
-                        <h3>SYDNEY</h3>
-                        <div class="rating">
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                        </div>
-                        <div class="driver"></div>
-                        <span class="duration">Duration: 2 Hours <br/> Opening: 8Am - 10Am</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6 col-xs-6">
-                  <div class="tour-list-box text-center zt-overlay zt-overlay-hover">
-                     <div class="img-box position-relative">
-                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-slide-top zt-flex zt-flex-center zt-flex-middle text-center">
-                           <a href="#" class="btn zt-default btn-lg">Book Now</a>
-                        </div>
-                        <img src="{{asset('images/thumbnails/newyork.png')}}" alt=""/>
-                     </div>
-                     <div class="box-content">
-                        <h3>NEWYORK</h3>
-                        <div class="rating">
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                        </div>
-                        <div class="driver"></div>
-                        <span class="duration">Duration: 2 Hours <br/> Opening: 8Am - 10Am</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6 col-xs-6">
-                  <div class="tour-list-box text-center zt-overlay zt-overlay-hover">
-                     <div class="img-box position-relative">
-                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-slide-top zt-flex zt-flex-center zt-flex-middle text-center">
-                           <a href="#" class="btn zt-default btn-lg">Book Now</a>
-                        </div>
-                        <img src="{{asset('images/thumbnails/machu-pichu.png')}}" alt=""/>
-                     </div>
-                     <div class="box-content">
-                        <h3>MACHU PICHU</h3>
-                        <div class="rating">
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                        </div>
-                        <div class="driver"></div>
-                        <span class="duration">Duration: 2 Hours <br/> Opening: 8Am - 10Am</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6 col-xs-6">
-                  <div class="tour-list-box text-center zt-overlay zt-overlay-hover">
-                     <div class="img-box position-relative">
-                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-slide-top zt-flex zt-flex-center zt-flex-middle text-center">
-                           <a href="#" class="btn zt-default btn-lg">Book Now</a>
-                        </div>
-                        <img src="{{asset('images/thumbnails/paris.png')}}" alt=""/>
-                     </div>
-                     <div class="box-content">
-                        <h3>PARIS</h3>
-                        <div class="rating">
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star color-primary"></span>
-                           <span class="fa fa-star"></span>
-                        </div>
-                        <div class="driver"></div>
-                        <span class="duration">Duration: 2 Hours <br/> Opening: 8Am - 10Am</span>
+                     <div class="text-box position-relative">
+                        <span class="angle-up"></span>
+                        <h3>Hawaii Trip</h3>
+                        <p>Etiam mattis, tortor non tincidunt euismod, ipsum arcu condimentum ligula, at ornare dolor turpis id massa. Ut sit amet augue lobortis lacus scelerisque volutpat.</p>
+                        <a href="#" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </section>
-      <section class="famous-locations">
-         <ul class="famous-slider text-white">
-            <li class="item">
-               <div class="row">
-                  <div class="col-md-5 col-sm-5 hidden-xs">
-                     <img src="{{asset('images/mt-fuji-sea-of-clouds-sunrise1.png')}}" alt=""/>
-                  </div>
-                  <div class="col-md-7 col-sm-7 col-xs-12">
-                     <div class="position-relative">
-                        <div class="content">
-                           <h3>TOP 5 famous locations</h3>
-                           <div class="famous-locations-meta"><span class="number">01.</span> Japan</div>
-                           <p>Aenean dui dui, semper eget orci id, sagittis ultricies sem. Fusce laoreet consequat nunc in fermentum. Nulla in faucibus ipsum, sed aliquet nulla. Vivamus ac nibh erat. Proin ut orci ac lacus bibendum efficitur non sit amet arcu.</p>
-                           <p>Vivamus aliquet est ac urna sodales, in volutpat leo viverra. Aenean ex ante, consequat id orci in, gravida commodo dui. Nunc vestibulum, eros dapibus rhoncus luctus, diam odio accumsan lectus, non consectetur elit felis vitae eros.</p>
-                           <a href="#" class="btn zt-default btn-lg" >Read more</a>
-                        </div>
-                        <div class="map-location">
-                           <img src="{{asset('images/map1-1.png')}}" alt=""/>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </li>
-            <li class="item">
-               <div class="row">
-                  <div class="col-md-5 col-sm-5 hidden-xs">
-                     <img src="{{asset('images/zone-tour-image-2.png')}}" alt=""/>
-                  </div>
-                  <div class="col-md-7 col-sm-7 col-xs-12">
-                     <div class="position-relative">
-                        <div class="content">
-                           <h3>TOP 5 famous locations</h3>
-                           <div class="famous-locations-meta"><span class="number">02.</span> Brazil</div>
-                           <p>Aenean dui dui, semper eget orci id, sagittis ultricies sem. Fusce laoreet consequat nunc in fermentum. Nulla in faucibus ipsum, sed aliquet nulla. Vivamus ac nibh erat. Proin ut orci ac lacus bibendum efficitur non sit amet arcu.</p>
-                           <p>Vivamus aliquet est ac urna sodales, in volutpat leo viverra. Aenean ex ante, consequat id orci in, gravida commodo dui. Nunc vestibulum, eros dapibus rhoncus luctus, diam odio accumsan lectus, non consectetur elit felis vitae eros.</p>
-                           <a href="#" class="btn zt-default btn-lg" >Read more</a>
-                        </div>
-                        <div class="map-location">
-                           <img src="{{asset('images/map-japan.png')}}" alt=""/>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </li>
-         </ul>
-      </section>
-      <section class="clients-says sec-padding">
+      {{--Latest Tour Packages--}}
+      <section class="popular-services sec-padding home-two">
+         <div class="sec-title text-center sec-title-padding">
+            <h2>Latest Tour Packages</h2>
+            <span class="tagline">Let me <b>Plan</b> your <b>Travelling</b></span>
+            <span class="img-border"></span>
+         </div>
          <div class="zt-container">
-            <div class="sec-title text-center sec-title-padding">
-               <h2>what our clients says</h2>
-               <span class="tagline">Phasellus vehicula malesuada quam, a condimentum mauris dignissim vulputate.</span>
-               <span class="img-border"></span>
-            </div>
-            <div class="clients-says-content position-relative">
-               <ul class="clients-slider">
-                  <li class="item">
-                     <p>“ Consectetur adipiscing elit. Etiam eu gravida risus. Aenean lacinia lacus ac nibh bibendum,<br/> non mollis urna pellentesque. Maecenas suscipit justo elit."</p>
-                     <div class="meta-profile"><span class="color-primary">- Emily Henderson,</span> U.S.A </div>
-                  </li>
-                  <li class="item">
-                     <p>“ Consectetur adipiscing elit. Etiam eu gravida risus. Aenean lacinia lacus ac nibh bibendum,<br/> non mollis urna pellentesque. Maecenas suscipit justo elit."</p>
-                     <div class="meta-profile"><span class="color-primary">- Emily Henderson,</span> U.S.A </div>
-                  </li>
-                  <li class="item">
-                     <p>“ Consectetur adipiscing elit. Etiam eu gravida risus. Aenean lacinia lacus ac nibh bibendum,<br/> non mollis urna pellentesque. Maecenas suscipit justo elit."</p>
-                     <div class="meta-profile"><span class="color-primary">- Emily Henderson,</span> U.S.A </div>
-                  </li>
-               </ul>
-               <div id="clients-pager" class="slider-thumbnail zt-flex zt-flex-center">
-                  <div class="slider-thumbnail-item">
-                     <a data-slide-index="0" href="#" class="zt-overlay">
-                        <div class="zt-overlay-background zt-overlay-panel zt-overlay-circular zt-overlay-opacity"></div>
-                        <img class="img circular" src="{{asset('images/thumbnails/team-member-2.jpg')}}" alt=""/>
-                     </a>
+            <div class="row">
+               <div class="col-md-4 col-sm-6 col-xs-6">
+                  <div class="tour-list-box text-center">
+                     <div class="img-box zt-overlay">
+                        <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
+                           <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
+                              <div class="box-padding">
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">duration</span>
+                                    2 days
+                                 </div>
+                                 <div class="driver"></div>
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">Destination</span>
+                                    Taung Gyi
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <img src="images/thumbnails/mumbai.jpg" alt="" />
+                     </div>
+                     <div class="box-content">
+                        <h3>Shwe Inle Trip</h3>
+                        <div class="excert">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ante eu dolor sollicitudin aliquam ut eget odio.
+                        </div>
+                        <a href="{{route('package_detail','1')}}" class="btn zt-default btn-lg">Read More</a>
+                     </div>
                   </div>
-                  <div class="slider-thumbnail-item">
-                     <a data-slide-index="1" href="#" class="zt-overlay active">
-                        <div class="zt-overlay-background zt-overlay-panel zt-overlay-circular zt-overlay-opacity"></div>
-                        <img class="img circular" src="{{asset('images/thumbnails/team-member-1.jpg')}}" alt=""/>
-                     </a>
+               </div>
+               <div class="col-md-4 col-sm-6 col-xs-6">
+                  <div class="tour-list-box text-center">
+                     <div class="img-box zt-overlay">
+                        <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
+                           <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
+                              <div class="box-padding">
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">duration</span>
+                                    2 days
+                                 </div>
+                                 <div class="driver"></div>
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">Destination</span>
+                                    Taung Gyi
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <img src="images/thumbnails/mumbai.jpg" alt="" />
+                     </div>
+                     <div class="box-content">
+                        <h3>Shwe Inle Trip</h3>
+                        <div class="excert">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ante eu dolor sollicitudin aliquam ut eget odio.
+                        </div>
+                        <a href="#" class="btn zt-default btn-lg">Read More</a>
+                     </div>
                   </div>
-                  <div class="slider-thumbnail-item">
-                     <a data-slide-index="2" href="#" class="zt-overlay">
-                        <div class="zt-overlay-background zt-overlay-panel zt-overlay-circular zt-overlay-opacity"></div>
-                        <img class="img circular" src="{{asset('images/thumbnails/team-member-3.jpg')}}" alt=""/>
-                     </a>
+               </div>
+               <div class="col-md-4 col-sm-6 col-xs-6">
+                  <div class="tour-list-box text-center">
+                     <div class="img-box zt-overlay">
+                        <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
+                           <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
+                              <div class="box-padding">
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">duration</span>
+                                    2 days
+                                 </div>
+                                 <div class="driver"></div>
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">Destination</span>
+                                    Taung Gyi
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <img src="images/thumbnails/mumbai.jpg" alt="" />
+                     </div>
+                     <div class="box-content">
+                        <h3>Shwe Inle Trip</h3>
+                        <div class="excert">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ante eu dolor sollicitudin aliquam ut eget odio.
+                        </div>
+                        <a href="#" class="btn zt-default btn-lg">Read More</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6 col-xs-6">
+                  <div class="tour-list-box text-center">
+                     <div class="img-box zt-overlay">
+                        <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
+                           <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
+                              <div class="box-padding">
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">duration</span>
+                                    2 days
+                                 </div>
+                                 <div class="driver"></div>
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">Destination</span>
+                                    Taung Gyi
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <img src="images/thumbnails/mumbai.jpg" alt="" />
+                     </div>
+                     <div class="box-content">
+                        <h3>Shwe Inle Trip</h3>
+                        <div class="excert">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ante eu dolor sollicitudin aliquam ut eget odio.
+                        </div>
+                        <a href="#" class="btn zt-default btn-lg">Read More</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6 col-xs-6">
+                  <div class="tour-list-box text-center">
+                     <div class="img-box zt-overlay">
+                        <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
+                           <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
+                              <div class="box-padding">
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">duration</span>
+                                    2 days
+                                 </div>
+                                 <div class="driver"></div>
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">Destination</span>
+                                    Taung Gyi
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <img src="images/thumbnails/mumbai.jpg" alt="" />
+                     </div>
+                     <div class="box-content">
+                        <h3>Shwe Inle Trip</h3>
+                        <div class="excert">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ante eu dolor sollicitudin aliquam ut eget odio.
+                        </div>
+                        <a href="#" class="btn zt-default btn-lg">Read More</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6 col-xs-6">
+                  <div class="tour-list-box text-center">
+                     <div class="img-box zt-overlay">
+                        <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
+                           <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
+                              <div class="box-padding">
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">duration</span>
+                                    2 days
+                                 </div>
+                                 <div class="driver"></div>
+                                 <div class="box-item font-bold">
+                                    <span class="color-primary">Destination</span>
+                                    Taung Gyi
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <img src="images/thumbnails/mumbai.jpg" alt="" />
+                     </div>
+                     <div class="box-content">
+                        <h3>Shwe Inle Trip</h3>
+                        <div class="excert">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ante eu dolor sollicitudin aliquam ut eget odio.
+                        </div>
+                        <a href="#" class="btn zt-default btn-lg">Read More</a>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </section>
-      <section class="stuning-beachs text-center sec-padding text-white">
-         <div class="zt-container">
-            <div class="sec-title text-center">
-               <h2>explore the stunning beaches</h2>
-               <span class="tagline">Curabitur vehicula, massa sit amet ultrices sollicitudin, lectus mi faucibus urna, a feugiat odio tellus congue <br/>arcu. Pellentesque aliquet ipsum a tincidunt commodo. </span>
-            </div>
-            <a href="#" class="btn zt-primary btn-lg">Book now <span class="fa fa-send"></span></a>
-         </div>
-      </section>
+
+      {{--Gallery--}}
       <section class="gallery-member sec-padding-top">
          <div class="sec-title text-center sec-title-padding">
-            <h2>Gallery from members</h2>
+            <h2>Gallery</h2>
             <span class="tagline">Phasellus vehicula malesuada quam, a condimentum mauris dignissim vulputate.</span>
             <span class="img-border"></span>
          </div>
@@ -432,59 +447,8 @@
             </li>
          </ul>
       </section>
-      <section class="latest-news sec-padding-top even">
-         <div class="zt-container">
-            <div class="sec-title text-center sec-title-padding">
-               <h2>Latest News</h2>
-               <span class="tagline">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</span>
-               <span class="img-border"></span>
-            </div>
-            <div class="row">
-               <div class="col-md-4 col-sm-12 col-xs-12">
-                  <div class="single-latest-news">
-                     <div class="img-box">
-                        <img src="{{asset('images/blog/sweet-ont-the-beach.png')}}" alt=""/>
-                     </div>
-                     <div class="text-box position-relative">
-                        <span class="angle-up"></span>
-                        <h3>Sweet Love On The Beach</h3>
-                        <span class="meta-blog">June 06,2016 | By Angelina Jolie</span>
-                        <p>Etiam mattis, tortor non tincidunt euismod, ipsum arcu condimentum ligula, at ornare dolor turpis id massa. Ut sit amet augue lobortis lacus scelerisque volutpat.</p>
-                        <a href="#" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-12 col-xs-12">
-                  <div class="single-latest-news">
-                     <div class="img-box">
-                        <img src="{{asset('images/blog/cool-place-visit-full-house.png')}}" alt=""/>
-                     </div>
-                     <div class="text-box position-relative">
-                        <span class="angle-up"></span>
-                        <h3>Cool place visit Full house</h3>
-                        <span class="meta-blog">June 06,2016 | By Angelina Jolie</span>
-                        <p>Etiam mattis, tortor non tincidunt euismod, ipsum arcu condimentum ligula, at ornare dolor turpis id massa. Ut sit amet augue lobortis lacus scelerisque volutpat.</p>
-                        <a href="#" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-12 col-xs-12">
-                  <div class="single-latest-news">
-                     <div class="img-box">
-                        <img src="{{asset('images/blog/color-aloft-balloon-festivan.png')}}" alt=""/>
-                     </div>
-                     <div class="text-box position-relative">
-                        <span class="angle-up"></span>
-                        <h3>Color Aloft Balloon Festival</h3>
-                        <span class="meta-blog">June 06,2016 | By Angelina Jolie</span>
-                        <p>Etiam mattis, tortor non tincidunt euismod, ipsum arcu condimentum ligula, at ornare dolor turpis id massa. Ut sit amet augue lobortis lacus scelerisque volutpat.</p>
-                        <a href="#" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+
+      {{--Partners--}}
       <section class="our-partners sec-padding">
          <div class="zt-container">
             <div class="sec-title text-center sec-title-padding">
@@ -512,28 +476,6 @@
                   <div class="item">
                      <img src="{{asset('images/carousel/audiojungle.png')}}" alt=""/>
                   </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section class="footer-top-cta sec-padding-medium text-white">
-         <div class="zt-container">
-            <div class="row">
-               <div class="col-md-6 col-sm-6 col-xs-12">
-                  <div class="sec-title text-left">
-                     <h2>SUBSCRIBE NEWSLETTERS</h2>
-                     <span class="tagline">Vivamus felis justo, venenatis eget massa nec, imperdiet maximus lectus.</span>
-                  </div>
-               </div>
-               <div class="col-md-6 col-sm-6 col-xs-12">
-                  <form class="form zt-flex zt-flex-middle zt-flex-center">
-                     <div class="form-group">
-                        <div class="input-icon">
-                           <input type="text" class="form-control"  placeholder="Enter your email...">
-                           <div class="input-addon"><span class="fa fa-send"></span></div>
-                        </div>
-                     </div>
-                  </form>
                </div>
             </div>
          </div>

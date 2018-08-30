@@ -1,7 +1,17 @@
 @extends('zone.layout.app')
-@section('title','Zone | Packages')
+@section('title','Zone | Tour Packages')
 @section('content')
-    <br><br>
+    <section class="inner-banner">
+        <div class="zt-container">
+            <div class="box clearfix">
+                <h2>Tour Packages</h2>
+                <ul class="breadcumb">
+                    <li><a href="">Home</a></li>
+                    <li><span>Destinations</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <section class="popular-services sec-padding home-two">
         <div class="zt-container">
             <div class="row">

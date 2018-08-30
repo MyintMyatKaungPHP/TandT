@@ -84,7 +84,7 @@
 
                 <div class="links">
                     <a href="{{route('zone')}}">Website</a>
-                    <a href="{{route('dashboard.index')}}">Admin Dashboard</a>
+                    <a href="{{route('dashboard')}}">Admin Dashboard</a>
                 </div>
             </div>
         </div>

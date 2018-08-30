@@ -12,4 +12,7 @@ class zone_Controller extends Controller
     protected function packages(){
         return view('zone.packages');
     }
+    protected function package_detail($id){
+        return view('zone.package_detail');
+    }
 }
