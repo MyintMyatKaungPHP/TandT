@@ -144,10 +144,6 @@ class package_Controller extends Controller
             $db_image = packages::find($id);
             $images = $db_image->images;
         }
-       // return $images;
-
-
-
         $package = packages::find($id);
         $package->title = request()->title;
         $package->city_id = request()->city_id;

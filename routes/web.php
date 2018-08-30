@@ -22,6 +22,8 @@ Route::get('dashboard', 'admin_Controller@dashboard')->name('dashboard');
 Route::resource('manage_city','city_Controller');
 //manage tour packages
 Route::resource('manage_package','package_Controller');
+//manage hotels
+Route::resource('manage_hotel','hotel_Controller');
 
 // Website //
 //index page
