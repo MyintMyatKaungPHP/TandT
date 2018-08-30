@@ -4,7 +4,7 @@
     <div class="content-wrapper">
         <div class="content-heading">
             <div>
-                Manage Hotels
+                Manage Routes
             </div>
         </div>
         <div class="row">
@@ -13,9 +13,9 @@
                     <!-- DATATABLE-->
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{route('manage_hotel.create')}}" class="btn btn-labeled btn-success mb-2">
+                            <a href="{{route('manage_route.create')}}" class="btn btn-labeled btn-success mb-2">
                                <span class="btn-label"><i class="fa fa-plus"></i>
-                               </span>Add New Hotel
+                               </span>Add New Route
                             </a>
                         </div>
                         <div class="card-header">
@@ -27,35 +27,35 @@
                                 <thead class="text-center">
                                 <tr>
                                     <th data-priority="1">No.</th>
-                                    <th>Name</th>
-                                    <th>Place</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>Transport Type</th>
                                     <th>Price</th>
-                                    <th>Website Address</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tfoot class="text-center">
                                 <tr>
                                     <th>No.</th>
-                                    <th>Name</th>
-                                    <th>Place</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>Transport Type</th>
                                     <th>Price</th>
-                                    <th>Website Address</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
                                 @php $i=1; @endphp
-                                @foreach($hotels as $h)
+                                @foreach($routes as $r)
                                     <tr>
                                         <td class="text-center">@php echo $i.'.';$i++; @endphp</td>
-                                        <td>{{$h->name}}</td>
-                                        <td>{{$h->place}}</td>
-                                        <td>$ {{$h->price}} / day</td>
-                                        <td>{{$h->link}}</td>
+                                        <td>{{$r->from}}</td>
+                                        <td>{{$r->to}}</td>
+                                        <td>{{$r->type}}</td>
+                                        <td>$ {{$r->price}}</td>
                                         <td class="text-center">
-                                            <a href="{{route('manage_hotel.edit',$h->id)}}" class="badge badge-info">Update</a>
-                                            <form action="{{route('manage_hotel.destroy',$h->id)}}" class="d-inline" method="post" >
+                                            <a href="{{route('manage_route.edit',$r->id)}}" class="badge badge-info">Update</a>
+                                            <form action="{{route('manage_route.destroy',$r->id)}}" class="d-inline" method="post" >
                                                 {{csrf_field()}}
                                                 {{method_field('Delete')}}
                                                 <button class="badge badge-danger" type="submit">Delete</button>

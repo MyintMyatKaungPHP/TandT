@@ -18,12 +18,14 @@ Route::get('/', function () {
 // Admin Dashboard //
 //Admin page
 Route::get('dashboard', 'admin_Controller@dashboard')->name('dashboard');
-//manage city
+//manage cities
 Route::resource('manage_city','city_Controller');
 //manage tour packages
 Route::resource('manage_package','package_Controller');
 //manage hotels
 Route::resource('manage_hotel','hotel_Controller');
+//manage routes
+Route::resource('manage_route','route_Controller');
 
 // Website //
 //index page

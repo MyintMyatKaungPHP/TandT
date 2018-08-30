@@ -70,6 +70,11 @@ function showToggle($str){
                                 <span>Manage Hotels</span>
                             </a>
                         </li>
+                        <li class="@php echo  showToggle('manage_route'); @endphp">
+                            <a href="{{route('manage_route.index')}}" title="Route">
+                                <span>Manage Routes</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
