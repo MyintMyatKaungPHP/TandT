@@ -94,7 +94,9 @@ class package_Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $package = packages::find($id);
+        $cities = cities::where('del_status','0')->get();
+        return view('dashboard.tour_packages.update',compact('package','cities'));
     }
 
     /**
@@ -106,7 +108,57 @@ class package_Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'title'=>'min:1|max:255',
+            'price'=>'required',
+            'description'=>'required',
+            'itinerary'=>'required',
+            'geo_location'=>'required',
+            'duration'=>'required',
+        ]);
+        if($validator->fails()){
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
+
+        //check user choose image
+        $images = null;
+        if(isset(request()->images)){
+
+            //if choose delete the images
+            $package = packages::find($id);
+            $image_arr = explode(',',$package->images);
+            foreach ($image_arr as $i){
+                File::delete('images/tour/'.$i);
+            }
+
+            $image_arr = array();
+            $images = request()->file('images');
+            foreach($images as $i){
+                $image_name = md5($i->getClientOriginalName()).'.'.$i->getClientOriginalExtension();
+                $image_destinationPath = public_path('images/tour/');
+                $i->move($image_destinationPath,$image_name);
+                array_push($image_arr,$image_name);
+            }
+            $images = implode(',',$image_arr);
+        }else{
+            $db_image = packages::find($id);
+            $images = $db_image->images;
+        }
+       // return $images;
+
+
+
+        $package = packages::find($id);
+        $package->title = request()->title;
+        $package->city_id = request()->city_id;
+        $package->price = request()->price;
+        $package->description = request()->description;
+        $package->itinerary = request()->itinerary;
+        $package->geo_location = request()->geo_location;
+        $package->duration = request()->duration;
+        $package->images =$images;
+        $package->save();
+        return redirect()->back()->with('status','New Tour Package Creating Successfully!');
     }
 
     /**
