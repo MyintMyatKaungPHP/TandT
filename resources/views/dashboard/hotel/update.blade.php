@@ -1,4 +1,21 @@
 @extends('dashboard.layout.app')
+@section('css')
+    <!-- TAGS INPUT-->
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')}}">
+    <!-- SLIDER CTRL-->
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/bootstrap-slider/dist/css/bootstrap-slider.css')}}">
+    <!-- CHOSEN-->
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/chosen-js/chosen.css')}}">
+    <!-- DATETIMEPICKER-->
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.css')}}">
+    <!-- COLORPICKER-->
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css')}}">
+    <!-- SELECT2-->
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/select2/dist/css/select2.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/%40ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css')}}">
+    <!-- WYSIWYG-->
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/bootstrap-wysiwyg/css/style.css')}}">
+@endsection
 @section('content')
     <!-- Page content-->
     <div class="content-wrapper">
@@ -67,4 +84,26 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <!-- FILESTYLE-->
+    <script src="{{asset('dashboard_asset/vendor/bootstrap-filestyle/src/bootstrap-filestyle.js')}}"></script>
+    <!-- TAGS INPUT-->
+    <script src="{{asset('dashboard_asset/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.js')}}"></script>
+    <!-- CHOSEN-->
+    <script src="{{asset('dashboard_asset/vendor/chosen-js/chosen.jquery.js')}}"></script>
+    <!-- SLIDER CTRL-->
+    <script src="{{asset('dashboard_asset/vendor/bootstrap-slider/dist/bootstrap-slider.js')}}"></script>
+    <!-- INPUT MASK-->
+    <script src="{{asset('dashboard_asset/vendor/inputmask/dist/jquery.inputmask.bundle.js')}}"></script>
+    <!-- WYSIWYG-->
+    <script src="{{asset('dashboard_asset/vendor/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js')}}"></script>
+    <!-- MOMENT JS-->
+    <script src="{{asset('dashboard_asset/vendor/moment/min/moment-with-locales.js')}}"></script>
+    <!-- DATETIMEPICKER-->
+    <script src="{{asset('dashboard_asset/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.js')}}"></script>
+    <!-- COLORPICKER-->
+    <script src="{{asset('dashboard_asset/vendor/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js')}}"></script>
+    <!-- SELECT2-->
+    <script src="{{asset('dashboard_asset/vendor/select2/dist/js/select2.full.js')}}"></script>
 @endsection

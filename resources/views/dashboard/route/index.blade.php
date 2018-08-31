@@ -49,8 +49,8 @@
                                 @foreach($routes as $r)
                                     <tr>
                                         <td class="text-center">@php echo $i.'.';$i++; @endphp</td>
-                                        <td>{{$r->from}}</td>
-                                        <td>{{$r->to}}</td>
+                                        <td>{{$r->from_city}}</td>
+                                        <td>{{$r->to_city}}</td>
                                         <td>{{$r->type}}</td>
                                         <td>$ {{$r->price}}</td>
                                         <td class="text-center">

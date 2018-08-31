@@ -37,3 +37,13 @@ Route::get('/packages','zone_Controller@packages')->name('packages');
 //package detail page
 Route::get('/package_detail/{id}','zone_Controller@package_detail')->name('package_detail');
 
+
+/*
+ * For Ajax Script
+ */
+
+//For Route
+Route::get('travel/type/{from_city}/{to_city}','zone_Controller@travelType');
+Route::get('travel/price/{id}','zone_Controller@travelPrice');
+Route::get('travel/hotel/{to_city}','zone_Controller@travelHotel');
+Route::get('travel/hotelprice/{id}','zone_Controller@hotelPrice');

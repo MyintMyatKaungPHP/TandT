@@ -1,6 +1,7 @@
 @extends('zone.layout.app')
 @section('title','Zone | Travels & Tours')
 @section('content')
+
     <section class="inner-banner">
         <div class="zt-container">
             <div class="box clearfix">
@@ -24,96 +25,73 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="viewonmap">
                                 <div class="tab-details">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9997.131062296527!2d-87.64746730347939!3d41.84627849028286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c5cebdc24c3%3A0xc7ddebb2cd527b44!2sI-94%2C+Chicago%2C+IL+60616!5e0!3m2!1svi!2s!4v1470110686691" width="600" height="450" allowfullscreen></iframe>
+                                    <iframe src="{{$package->geo_location}}" width="600" height="450" allowfullscreen></iframe>
                                 </div>
                             </div>
                             <div class="tab-pane" id="itinerary">
                                 <div class="tab-details">
-                                    <p>Day 1</p>
-                                    <ul>
-                                        <li> Weeping Maui Onion Tartlets</li>
-                                        <li> Dark triple chocolate Brownies</li>
-                                        <li> White Chocolate Macadamia Nut Cookies</li>
-                                        <li> Fresh Kona Coffee</li>
-                                    </ul>
-                                    <p>Day 2</p>
-                                    <ul>
-                                        <li> Weeping Maui Onion Tartlets</li>
-                                        <li> Dark triple chocolate Brownies</li>
-                                        <li> White Chocolate Macadamia Nut Cookies</li>
-                                        <li> Fresh Kona Coffee</li>
-                                    </ul>
+                                    <?php echo $package->itinerary; ?>
                                 </div>
                             </div>
                             <div class="tab-pane" id="hotel">
                                 <div class="tab-details">
                                     <ul class="menuList">
-                                        <li> Assorted Cheeses and crackers</li>
-                                        <li>Jumbo shrimp with Bloody Mary Cocktail Sauce</li>
-                                        <li>Artichoke Heart Dip with Garlic Crostini</li>
-                                        <li>Vegetable Crudite</li>
-                                        <li>'Bone Appetite' Baby Back Ribs</li>
-                                        <li>Honey Ginger Glazed Chicken</li>
-                                        <li>Weeping Maui Onion Tartlets</li>
-                                        <li>Dark triple chocolate Brownies</li>
-                                        <li>White Chocolate Macadamia Nut Cookies</li>
-                                        <li>Fresh Kona Coffee</li>
+                                        @foreach($hotels as $hotel)
+                                            <li><a href="{{$hotel->link}}" target="_blank">{{$hotel->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="destination-content">
+                            <h1>{{$package->title}} - {{$package->duration}} Day(s)</h1>
+                            <span>Tour Package Cost ($) - </span>
+                            <b id="package_price">{{$package->price}}</b>
                             <div class="thumbnail">
-                                <img src="{{asset('images/tour/building-ocean-buildings.jpg')}}" alt=""/>
+                                <?php $img = explode(',',$package->images); ?>
+                                <img src="{{asset('images/tour/'.$img[0])}}" alt=""/>
                             </div>
-                            <h1>SHWE INLE TRIP (7 Days Trip)</h1>
-                            <blockquote>
-                                $200
-                            </blockquote>
-                            <p>Nam placerat at augue et vulputate. In quis ipsum ac dolor mollis suscipit. Sed a tellus tortor. Phasellus ac elit vel leo vehicula eleifend quis nec orci. Pellentesque vulputate pretium urna eget vehicula. Vestibulum eu arcu interdum, fermentum leo viverra, egestas lacus. Sed non lobortis orci. Maecenas pretium nec ante id aliquet. Maecenas leo velit, vestibulum id maximus eget. Vivamus congue hendrerit neque, ultricies pharetra nisl.</p>
-                            <p>Nam iaculis neque ligula, sed semper leo facilisis nec. Maecenas ut ullamcorper urna, quis sollicitudin magna. Cras porta arcu id ex mattis, a rhoncus arcu consequat. Aenean blandit eros sit amet varius vehicula. Suspendisse tristique felis lectus, at tincidunt metus pellentesque in. Sed ornare eget velit nec faucibus.</p>
-                            <img src="{{asset('images/thumbnails/zone-tour-image-califa.png')}}" height="225" width="360" alt=""/>
-                            <img src="{{asset('images/thumbnails/night-traffic.png')}}" height="225" width="360" alt=""/>
-                            <p>Praesent viverra consectetur elit vitae lacinia. Curabitur vitae consectetur turpis, sed tincidunt nibh. Nullam eget consequat magna. Suspendisse id laoreet felis, at consequat tortor. Nulla suscipit leo non egestas placerat. Etiam a sagittis erat. Morbi id commodo tellus. Praesent id risus arcu. Integer facilisis, erat nec facilisis pulvinar, magna risus pulvinar arcu, ut lobortis est massa et dolor. Morbi quis neque et justo malesuada laoreet. In turpis mi, cursus sed sodales nec, efficitur ut nulla. Sed faucibus ante ac elit faucibus finibus. Proin cursus ligula in erat interdum placerat. Etiam sodales nisi ut porta posuere. Aenean vehicula tellus sed molestie venenatis.</p>
+                            <p><?php echo $package->description; ?></p>
+                            <img src="{{asset('images/tour/'.$img[1])}}" height="225" width="360" alt=""/>
+                            <img src="{{asset('images/tour/'.$img[2])}}" height="225" width="360" alt=""/>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-5 col-xs-12">
                     <div class="destination-sidebar-wrap sidebar-box">
                         <div class="sidebar-header">
-                            <h3 class="title">Travel Information</h3>
+                            <h3 class="title">Route Information</h3>
                         </div>
                         <div class="sidebar-book sidebar-content">
                             <form class="form filter-box">
                                 <div class="form-group">
                                     <b>From</b>
-                                    <select name="city" class="zt-control">
-                                        <option value="yangon">Yangon</option>
-                                        <option value="hawaii">Hawaii</option>
+                                    <select name="city" class="zt-control" id="from_city">
+                                        @foreach($from_city as $route)
+                                            <option value="{{$route->from_city}}">{{$route->from_city}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <b>To</b>
-                                    <select name="city" class="zt-control">
-                                        <option value="yangon">Taung Gyi</option>
+                                    <select name="city" class="zt-control" id="to_city">
+                                        <option value="{{$to_city->name}}">{{$to_city->name}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <b>Choose Travel Type</b>
-                                    <select name="city" class="zt-control">
-                                        <option value="yangon">Express Car</option>
-                                        <option value="yangon">Air Plane</option>
+                                    <select name="city" id="type" class="zt-control">
+
                                     </select>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                    </div>
                                     <div class="sidebar-order">
                                         <div class="price">
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <div class="box-price right">
-                                                    Travel Cost
-                                                    <span class="number">$80</span>
+                                                    <div>Travel Cost ($)</div>
+                                                    <span class="number" id="route_price">Choose Travel Type</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -128,32 +106,31 @@
                         <div class="sidebar-order sidebar-content">
                             <h3 class="title">Choose Hotel</h3>
                             <form class="form">
-                                <select name="city" class="zt-control">
-                                    <option value="yangon">Max Hotel</option>
-                                    <option value="yangon">ACE Hotel</option>
+                                <select name="city" id="ho" class="zt-control">
+
                                 </select>
                             </form>
                             <div class="price">
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-12 col-xs-12"></div>
-                                    <div class="col-md-6 col-sm-12 col-xs-12">
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
                                         <div class="box-price right">
-                                            Hotel Cost
-                                            <span class="number">$80</span>
+                                            <div>Hotel Cost ($)</div>
+                                            <span class="number" id="ho_price">Choose Hotel</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="sidebar-header">
-                            <h3 class="title">Total Cost For 1 Person</h3>
+                            <h3 class="title">Total Cost($) For 1 Person</h3>
                         </div>
                         <div class="sidebar-order sidebar-content">
                             <div class="price">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                                         <div class="box-price">
-                                            <span class="number">$400</span>
+                                            <span class="number" style="font-size: 36px!important;" id="total">0</span>
                                         </div>
                                     </div>
                                 </div>
@@ -171,4 +148,96 @@
             </div>
         </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $(function(){
+
+            var to_city = $('#to_city');
+            var from_city = $('#from_city');
+            var route_price = $('#route_price');
+            var base_url = location.host;
+            var type = $('#type');
+            var ho = $('#ho');
+            var ho_price = $('#ho_price');
+            var package_price = $('#package_price');
+
+
+            if(from_city.val() == to_city.val){
+                route_price.text(0);
+            }
+
+                if(from_city.val() == to_city.val()){
+                    route_price.text(0);
+                }
+                $.ajax({
+                    url:'http://'+base_url+'/travel/type/'+from_city.val()+'/'+to_city.val(),
+                    method:'GET',
+                    success:function(data){
+                        type.html(data)
+                    }
+                })
+                type.load(function(){
+                    $.ajax({
+                        url:'http://'+base_url+'/travel/price/'+type.val(),
+                        method:'GET',
+                        success:function(data){
+                            route_price.text(data);
+                        }
+                    })
+                })
+
+            from_city.click(function(){
+               if(from_city.val() == to_city.val()){
+                   route_price.text(0);
+               }
+               $.ajax({
+                    url:'http://'+base_url+'/travel/type/'+from_city.val()+'/'+to_city.val(),
+                    method:'GET',
+                    success:function(data){
+                        type.html(data)
+                    }
+               })
+            })
+
+            type.click(function(){
+                $.ajax({
+                    url:'http://'+base_url+'/travel/price/'+type.val(),
+                    method:'GET',
+                    success:function(data){
+                        route_price.text(data);
+                        total =parseInt(package_price.html()) + parseInt(ho_price.html()) +  parseInt(route_price.html());
+                        $('#total').text(total)
+                    }
+                })
+            })
+
+            //check hotel
+            $.ajax({
+                url:'http://'+base_url+'/travel/hotel/'+to_city.val(),
+                method:'GET',
+                success:function(d){
+                    ho.html(d);
+                }
+            })
+
+            ho.click(function(){
+                $.ajax({
+                    url:'http://'+base_url+'/travel/hotelprice/'+ho.val(),
+                    method:'GET',
+                    success:function(data){
+                        ho_price.text(data);
+
+                        total =parseInt(package_price.html()) + parseInt(ho_price.html()) +  parseInt(route_price.html());
+                        $('#total').text(total)
+                    }
+                })
+            })
+        })
+    </script>
 @endsection

@@ -15,8 +15,8 @@ class CreateRoutesTable extends Migration
     {
         Schema::create('routes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('from');
-            $table->string('to');
+            $table->string('from_city');
+            $table->string('to_city');
             $table->string('type');
             $table->double('price');
             $table->enum('del_status',['1','0'])->default('0');

@@ -46,8 +46,8 @@ class route_Controller extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
         $route = new routes();
-        $route->from = request()->from;
-        $route->to = request()->to;
+        $route->from_city = request()->from_city;
+        $route->to_city = request()->to_city;
         $route->price = request()->price;
         $route->type = request()->type;
         $route->save();
@@ -88,8 +88,8 @@ class route_Controller extends Controller
     public function update(Request $request, $id)
     {
         $route = routes::find($id);
-        $route->from = request()->from;
-        $route->to = request()->to;
+        $route->from_city = request()->from_city;
+        $route->to_city = request()->to_city;
         $route->price = request()->price;
         $route->type = request()->type;
         $route->save();
