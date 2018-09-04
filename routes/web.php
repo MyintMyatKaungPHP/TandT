@@ -37,7 +37,14 @@ Route::get('/packages','zone_Controller@packages')->name('packages');
 //package detail page
 Route::get('/package_detail/{id}','zone_Controller@package_detail')->name('package_detail');
 
+//registration
+Route::resource('/registration','user_Controller');
 
+//login
+Route::get('/login','user_Controller@login')->name('login');
+Route::post('/login','user_Controller@attemptLogin')->name('registration.attepmtLogin');
+//user logout
+Route::get('user/logout','user_Controller@logout')->name('user.logout');
 /*
  * For Ajax Script
  */
@@ -47,3 +54,7 @@ Route::get('travel/type/{from_city}/{to_city}','zone_Controller@travelType');
 Route::get('travel/price/{id}','zone_Controller@travelPrice');
 Route::get('travel/hotel/{to_city}','zone_Controller@travelHotel');
 Route::get('travel/hotelprice/{id}','zone_Controller@hotelPrice');
+
+Route::get('password',function(){
+    return bcrypt('123456');
+});

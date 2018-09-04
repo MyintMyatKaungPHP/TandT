@@ -3,6 +3,20 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <title>@yield('title')</title>
+    <style>
+        .logout:hover{
+            background-color:black!important;
+            border:2px solid #f4b843;
+            color:white;
+            transition:0.2s!important;
+        }
+
+        .profile img{
+            width:40px;
+            height:40px;
+            border-radius:3px;
+        }
+    </style>
     <!-- viewport meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,13 +91,27 @@
                 <li><a href="#" target="_blank"><span class="fa fa-google-plus"></span></a></li>
             </ul>
         </div>
+
         <div class="login pull-right">
             <ul>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
+                @if(!Auth::check())
+                <li><a href="{{route('login')}}">Login</a></li>
+                <li><a href="{{route('registration.index')}}">Register</a></li>
                 <li><a href="#" id="search" ><span class="fa fa-search"></span></a></li>
+                @else
+                    <li class="profile">
+                        <img src="{{asset('images/clients/'.Auth::user()->image)}}" alt="">
+                    </li>
+                    <li><a href="#">Welcome <b>{{Auth::user()->name}}</b></a></li>
+                    <li><a href="#" class="text text-warning">Edit Profile</a></li>
+                    <li><a href="#" class="text text-warning">View Booking List</a></li>
+                    <li><a href="{{route('user.logout')}}" class="btn zt-primary logout" style="margin-left:10px;line-height:3px;height:3px;font-size:10px!important;">Logout</a></li>
+                @endif
             </ul>
         </div>
+
+
+
         <div class="form-search-wrap">
             <div class="zt-container">
                 <a href="#" class="close-search"><span class="fa fa-remove"></span></a>
