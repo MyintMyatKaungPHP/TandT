@@ -18,7 +18,7 @@
                     </div>
                     <div class="sidebar-book sidebar-content">
                         @include('zone.layout.error')
-                        <form class="form filter-box" enctype="multipart/form-data" action="{{route('registration.attepmtLogin')}}" method="post">
+                        <form class="form filter-box" enctype="multipart/form-data" action="{{route('attepmtLogin')}}" method="post">
                             {{csrf_field()}}
                             <div class="form-group">
                                 <div class="input-icon">

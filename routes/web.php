@@ -41,10 +41,10 @@ Route::get('/package_detail/{id}','zone_Controller@package_detail')->name('packa
 Route::resource('/registration','user_Controller');
 
 //login
-Route::get('/login','user_Controller@login')->name('login');
-Route::post('/login','user_Controller@attemptLogin')->name('registration.attepmtLogin');
+Route::get('/login','login_Controller@login')->name('login');
+Route::post('/login','login_Controller@attemptLogin')->name('attepmtLogin');
 //user logout
-Route::get('user/logout','user_Controller@logout')->name('user.logout');
+Route::get('user/logout','login_Controller@logout')->name('user.logout');
 /*
  * For Ajax Script
  */
@@ -56,5 +56,5 @@ Route::get('travel/hotel/{to_city}','zone_Controller@travelHotel');
 Route::get('travel/hotelprice/{id}','zone_Controller@hotelPrice');
 
 Route::get('password',function(){
-    return bcrypt('123456');
+    return bcrypt('123456').' | '.sha1('123456').' | '.md5('123456');
 });

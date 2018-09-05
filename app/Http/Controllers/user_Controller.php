@@ -16,7 +16,11 @@ class user_Controller extends Controller
      */
     public function index()
     {
-        return view('zone.registration');
+        if(!Auth::check()){
+            return view('zone.registration');
+        }else{
+            return redirect()->back();
+        }
     }
 
     /**
@@ -41,9 +45,10 @@ class user_Controller extends Controller
             'email'=>'unique:users|min:3',
             'password'=>'min:3|confirmed',
             'address'=>'required',
-            'phone'=>'required',
+            'phone'=>'required|max:11',
             'name'=>'required'
         ]);
+
         $image = request()->file('image');
         $image_name = md5($image->getClientOriginalName()).'.'.$image->getClientOriginalExtension();
         $destinationPath = public_path('images/clients/');
@@ -52,7 +57,7 @@ class user_Controller extends Controller
         $user = new users();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = sha1($request->password);
+        $user->password = bcrypt($request->password);
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->image = $image_name;
@@ -60,23 +65,6 @@ class user_Controller extends Controller
         return redirect(route('login'))->with('status','Registration Success!');
     }
 
-    public function login(){
-        return view('zone.login');
-    }
-    public function attemptLogin(){
-        $email = request()->email;
-        $password = request()->password;
-        if(Auth::attempt(['email'=>$email,'password'=>$password])){
-            return redirect(route('zone'));
-        }else{
-            return redirect()->back();
-        }
-    }
-
-    public function logout(){
-        Auth::logout();
-        return redirect(route('login'));
-    }
 
     /**
      * Display the specified resource.

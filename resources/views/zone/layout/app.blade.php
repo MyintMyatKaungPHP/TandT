@@ -97,12 +97,11 @@
                 @if(!Auth::check())
                 <li><a href="{{route('login')}}">Login</a></li>
                 <li><a href="{{route('registration.index')}}">Register</a></li>
-                <li><a href="#" id="search" ><span class="fa fa-search"></span></a></li>
                 @else
                     <li class="profile">
                         <img src="{{asset('images/clients/'.Auth::user()->image)}}" alt="">
                     </li>
-                    <li><a href="#">Welcome <b>{{Auth::user()->name}}</b></a></li>
+                    <li><a href="#"><b>{{Auth::user()->name}}</b></a></li>
                     <li><a href="#" class="text text-warning">Edit Profile</a></li>
                     <li><a href="#" class="text text-warning">View Booking List</a></li>
                     <li><a href="{{route('user.logout')}}" class="btn zt-primary logout" style="margin-left:10px;line-height:3px;height:3px;font-size:10px!important;">Logout</a></li>

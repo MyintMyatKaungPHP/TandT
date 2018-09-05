@@ -42,7 +42,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-icon">
-                                    <input type="text" class="zt-control" placeholder="Phone" name="phone">
+                                    <input type="text" class="zt-control" maxlength="11" placeholder="Phone" name="phone">
                                 </div>
                             </div>
                             <div class="form-group">
