@@ -6,6 +6,9 @@ use App\user\users;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class user_Controller extends Controller
 {
@@ -97,7 +100,51 @@ class user_Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = users::find($id);
+          if(isset(request()->image)){
+              $image = request()->file('image');
+              $image_name = md5($image->getClientOriginalName()).'.'.$image->getClientOriginalExtension();
+              $destinationPath = public_path('images/clients/');
+              $image->move($destinationPath,$image_name);
+              File::delete('images/clients/'.$user->image);
+          }else{
+              $image_name = $user->image;
+          }
+
+          if(isset(request()->password)){
+              $this->validate($request,[
+                 'password'=>'min:3|confirmed',
+              ]);
+              if(Hash::check($request->cur_password, $user->password)){
+                  $password = Hash::make($request->password);
+              }else{
+                  return redirect()->back()->withInput()->withErrors(array('errors' => 'Current password does not match!'));
+              }
+          }else{
+              $password = $user->password;
+          }
+        $this->validate($request,[
+            'email'=>'unique:users|min:3',
+            'address'=>'required',
+            'phone'=>'required|max:11',
+            'name'=>'required'
+        ]);
+
+        $user = users::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $password;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->image = $image_name;
+        $user->save();
+        return redirect()->back()->with('status','Profile Updating Success!');
+
+    }
+
+    public function user_profile(){
+        $user = users::find(Auth::id());
+        return view('zone.profile',compact('user'));
     }
 
     /**

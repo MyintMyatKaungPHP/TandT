@@ -38,13 +38,16 @@ Route::get('/packages','zone_Controller@packages')->name('packages');
 Route::get('/package_detail/{id}','zone_Controller@package_detail')->name('package_detail');
 
 //registration
-Route::resource('/registration','user_Controller');
+Route::resource('user/registration','user_Controller');
 
 //login
-Route::get('/login','login_Controller@login')->name('login');
-Route::post('/login','login_Controller@attemptLogin')->name('attepmtLogin');
-//user logout
+Route::get('user/login','login_Controller@login')->name('login');
+Route::post('user/login','login_Controller@attemptLogin')->name('attepmtLogin');
+//logout
 Route::get('user/logout','login_Controller@logout')->name('user.logout');
+
+//profile
+Route::get('user/profile','user_Controller@user_profile')->name('user.profile');
 /*
  * For Ajax Script
  */
