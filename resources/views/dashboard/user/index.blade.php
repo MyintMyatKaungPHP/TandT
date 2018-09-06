@@ -4,7 +4,7 @@
     <div class="content-wrapper">
         <div class="content-heading">
             <div>
-               Manage Cities
+                Manage Users
             </div>
         </div>
         <div class="row">
@@ -13,13 +13,7 @@
                     <!-- DATATABLE-->
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{route('manage_city.create')}}" class="btn btn-labeled btn-success mb-2">
-                               <span class="btn-label"><i class="fa fa-plus"></i>
-                               </span>Add New City
-                            </a>
-                        </div>
-                        <div class="card-header">
-                            <div class="card-title">All Cities List</div>
+                            <div class="card-title">All Users List</div>
                         </div>
                         @include('dashboard.layout.error')
                         <div class="card-body">
@@ -28,6 +22,10 @@
                                 <tr>
                                     <th data-priority="1">No.</th>
                                     <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -35,24 +33,30 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
                                 @php $i=1; @endphp
-                                @foreach($cities as $c)
+                                @foreach($users as $u)
                                     <tr>
                                         <td class="text-center">@php echo $i.'.';$i++; @endphp</td>
-                                        <td>{{$c->name}}</td>
+                                        <td>{{$u->name}}</td>
+                                        <td>{{$u->email}}</td>
+                                        <td>{{$u->role}}</td>
+                                        <td>{{$u->phone}}</td>
+                                        <td>{{$u->address}}</td>
                                         <td class="text-center">
-                                            <a href="{{route('manage_city.edit',$c->id)}}" class="badge badge-info">Update</a>
-                                            @if(Auth::user()->role=='admin')
-                                            <form action="{{route('manage_city.destroy',$c->id)}}" class="d-inline" method="post" >
+                                            <a href="{{route('manage_user.edit',$u->id)}}" class="badge badge-info">Change Role</a>
+                                            <form action="{{route('manage_user.destroy',$u->id)}}" class="d-inline" method="post" >
                                                 {{csrf_field()}}
                                                 {{method_field('Delete')}}
-                                                <button class="badge badge-danger" type="submit">Delete</button>
+                                                <button class="badge badge-danger" type="submit">Ban</button>
                                             </form>
-                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

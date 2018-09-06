@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('zone'));
 });
 
 // Admin Dashboard //
@@ -45,9 +45,15 @@ Route::get('user/login','login_Controller@login')->name('login');
 Route::post('user/login','login_Controller@attemptLogin')->name('attepmtLogin');
 //logout
 Route::get('user/logout','login_Controller@logout')->name('user.logout');
+//ban logout
+Route::get('user/ban_logout','login_Controller@ban_logout')->name('user.ban_logout');
 
 //profile
 Route::get('user/profile','user_Controller@user_profile')->name('user.profile');
+
+//blacklist
+Route::resource('manage_user','blacklist_Controller');
+Route::resource('mangge_user/blacklist','blacklist_user_Controller');
 /*
  * For Ajax Script
  */

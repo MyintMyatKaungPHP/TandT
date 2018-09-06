@@ -46,7 +46,31 @@ function showToggle($str){
                     </a>
                 </li>
 
-                {{-- To Tour Packages --}}
+                {{-- For User Management --}}
+                @if(Auth::user()->role=='admin')
+                <li class=" ">
+                    <a href="#usermanage" title="UserManage" data-toggle="collapse">
+                        <em class="icon-user"></em>
+                        <span data-localize="sidebar.nav.UserManage">User Management</span>
+                        <span class="fa fa-sort-down ml-4"></span>
+                    </a>
+                    <ul class="sidebar-nav sidebar-subnav collapse @php echo  showToggle('manage_user'); @endphp"  id="usermanage">
+                        <li class="sidebar-subnav-header">User Management</li>
+                        <li class="@php echo  showToggle('manage_user'); @endphp">
+                            <a href="{{route('manage_user.index')}}" title="ManageUser">
+                                <span>Manage Users</span>
+                            </a>
+                        </li>
+                        <li class="@php echo  showToggle('blacklist'); @endphp">
+                            <a href="{{route('blacklist.index')}}" title="Blacklist">
+                                <span>Blacklist Users</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+
+                {{-- For Tour Packages --}}
                 <li class=" ">
                     <a href="#tourpackages" title="TourPackages" data-toggle="collapse">
                         <em class="icon-graph"></em>
@@ -57,7 +81,7 @@ function showToggle($str){
                         <li class="sidebar-subnav-header">Tour Packages</li>
                         <li class="@php echo  showToggle('manage_city'); @endphp">
                             <a href="{{route('manage_city.index')}}" title="City">
-                                <span>Manage City</span>
+                                <span>Manage Cities</span>
                             </a>
                         </li>
                         <li class="@php echo  showToggle('manage_package'); @endphp">
@@ -77,6 +101,8 @@ function showToggle($str){
                         </li>
                     </ul>
                 </li>
+
+
 
                 {{-- Go To Website (front-end) --}}
                 <li class="nav-heading ">

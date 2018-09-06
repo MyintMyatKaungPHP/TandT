@@ -55,11 +55,13 @@
                                         <td>{{$h->link}}</td>
                                         <td class="text-center">
                                             <a href="{{route('manage_hotel.edit',$h->id)}}" class="badge badge-info">Update</a>
+                                            @if(Auth::user()->role=='admin')
                                             <form action="{{route('manage_hotel.destroy',$h->id)}}" class="d-inline" method="post" >
                                                 {{csrf_field()}}
                                                 {{method_field('Delete')}}
                                                 <button class="badge badge-danger" type="submit">Delete</button>
                                             </form>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

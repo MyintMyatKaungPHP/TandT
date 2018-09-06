@@ -16,14 +16,17 @@ class login_Controller extends Controller
 
         if(Auth::attempt(['email'=>$email,'password'=>$password])){
             $user= users::find(Auth::id());
-            if($user->role=='user'){
-                return redirect(route('zone'));
+            if($user->ban_status=='0'){
+                if($user->role=='user'){
+                    return redirect(route('zone'));
+                }else{
+                    return redirect(route('dashboard'));
+                }
             }else{
-                return redirect(route('dashboard'));
+                return redirect(route('user.ban_logout'));
             }
-
         }else{
-            return redirect()->back()->with('status','Email or Password incorrect!');
+            return redirect()->back()->with('error','Incorrect Email or Password!');
         }
     }
 
@@ -38,5 +41,10 @@ class login_Controller extends Controller
     public function logout(){
         Auth::logout();
         return redirect(route('zone'));
+    }
+
+    public function ban_logout(){
+        Auth::logout();
+        return redirect(route('login'))->with('error','You are blacklist user! Cannot login!');
     }
 }
