@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\user\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +15,13 @@ class login_Controller extends Controller
         $password = request()->password;
 
         if(Auth::attempt(['email'=>$email,'password'=>$password])){
-            return redirect(route('zone'));
+            $user= users::find(Auth::id());
+            if($user->role=='user'){
+                return redirect(route('zone'));
+            }else{
+                return redirect(route('dashboard'));
+            }
+
         }else{
             return redirect()->back()->with('status','Email or Password incorrect!');
         }

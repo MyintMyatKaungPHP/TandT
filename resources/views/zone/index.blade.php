@@ -5,12 +5,13 @@
       {{--Search--}}
       <section class="filter-tour">
          <div class="filter-wrap">
-            <form class="form-inline filter-box">
+            <form class="form-inline filter-box" action="" method="post" >
                <div class="form-group">
                   <b>Where you want to travel?</b>
                   <select name="city" class="zt-control">
-                     <option value="yangon">Yangon</option>
-                     <option value="hawaii">Hawaii</option>
+                     @foreach($cities as $city)
+                        <option value="{{$city->city_id}}">{{$city->cities->name}}</option>
+                     @endforeach
                   </select>
                   <span class="select-arrow"></span>
                </div>

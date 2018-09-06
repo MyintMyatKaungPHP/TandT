@@ -37,7 +37,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-icon">
-                                    <input type="password" class="zt-control"  name="password_confirmation" placeholder="Confirm Password">
+                                    <input type="password" class="zt-control"  placeholder="Confirm Password" name="password_confirmation">
                                 </div>
                             </div>
                             <div class="form-group">

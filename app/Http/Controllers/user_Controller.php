@@ -101,50 +101,63 @@ class user_Controller extends Controller
     public function update(Request $request, $id)
     {
         $user = users::find($id);
-          if(isset(request()->image)){
-              $image = request()->file('image');
-              $image_name = md5($image->getClientOriginalName()).'.'.$image->getClientOriginalExtension();
-              $destinationPath = public_path('images/clients/');
-              $image->move($destinationPath,$image_name);
-              File::delete('images/clients/'.$user->image);
-          }else{
-              $image_name = $user->image;
-          }
 
-          if(isset(request()->password)){
-              $this->validate($request,[
-                 'password'=>'min:3|confirmed',
-              ]);
-              if(Hash::check($request->cur_password, $user->password)){
-                  $password = Hash::make($request->password);
-              }else{
-                  return redirect()->back()->withInput()->withErrors(array('errors' => 'Current password does not match!'));
-              }
-          }else{
-              $password = $user->password;
-          }
+        if(isset(request()->image)){
+            $image = request()->file('image');
+            $image_name = md5($image->getClientOriginalName()).'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('images/clients/');
+            $image->move($destinationPath,$image_name);
+            File::delete('images/clients/'.$user->image);
+        }else{
+            $image_name = $user->image;
+        }
+//new password
+        if(isset(request()->password)){
+
+            if(Hash::check($request->cur_password, $user->password)){
+                $this->validate($request,[
+                    'password'=>'min:3|confirmed',
+                ]);
+                $password = Hash::make($request->password);
+            }else{
+                return redirect()->back()->withInput()->withErrors(array('errors' => 'Current password does not match!'));
+            }
+        }else{
+            $password = $user->password;
+        }
+
+        if(isset(request()->phone)){
+
+            $this->validate($request,[
+                'phone'=>'required|max:11',
+            ]);
+            $phone = request()->phone;
+        }
+
         $this->validate($request,[
             'email'=>'unique:users|min:3',
             'address'=>'required',
-            'phone'=>'required|max:11',
+            'phone'=>'required',
             'name'=>'required'
         ]);
 
-        $user = users::find($id);
         $user->name = $request->name;
-        $user->email = $request->email;
         $user->password = $password;
-        $user->phone = $request->phone;
+        $user->phone = $phone;
         $user->address = $request->address;
         $user->image = $image_name;
         $user->save();
-        return redirect()->back()->with('status','Profile Updating Success!');
+        return redirect(route('user.profile'))->with('status','Profile Updating Success!');
 
     }
 
     public function user_profile(){
-        $user = users::find(Auth::id());
-        return view('zone.profile',compact('user'));
+        if(!Auth::check()){
+            return redirect(route('login'))->with('status','Please Login First');
+        }else{
+            return view('zone.profile');
+        }
+
     }
 
     /**
@@ -155,6 +168,9 @@ class user_Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = users::find($id);
+        $user->delete();
+        Auth::logout();
+        return redirect(route('zone'));
     }
 }

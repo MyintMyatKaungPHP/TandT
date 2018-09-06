@@ -104,6 +104,9 @@
                     <li><a href="#"><b>{{Auth::user()->name}}</b></a></li>
                     <li><a href="{{route('user.profile')}}" class="text text-warning">Edit Profile</a></li>
                     <li><a href="#" class="text text-warning">View Booking List</a></li>
+                    @if(Auth::user()->role=="admin"||Auth::user()->role=='editor')
+                        <li><a href="{{route('dashboard')}}" class="text text-warning">Dashboard</a></li>
+                    @endif
                     <li><a href="{{route('user.logout')}}" class="btn zt-primary logout" style="margin-left:10px;line-height:3px;height:3px;font-size:10px!important;">Logout</a></li>
                 @endif
             </ul>
