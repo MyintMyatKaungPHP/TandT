@@ -61,6 +61,17 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-xl-2 col-form-label">Package Type</label>
+                                <div class="col-xl-6 col-10">
+                                    <select name="type" id="select2-1" class="form-control">
+                                        <option value="normal">Normal Trip</option>
+                                        <option value="honeymoon">Honeymoon Trip</option>
+                                        <option value="vacation">Vacation Trip</option>
+                                        <option value="sightseeing">Sightseeing Trip</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-xl-2 col-form-label">Description</label>
                                 <div class="col-md-10">
                                     <textarea name="description" class="textareaeditor"></textarea>

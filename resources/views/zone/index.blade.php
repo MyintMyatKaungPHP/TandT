@@ -5,7 +5,8 @@
       {{--Search--}}
       <section class="filter-tour">
          <div class="filter-wrap">
-            <form class="form-inline filter-box" action="" method="post" >
+            <form class="form-inline filter-box" action="{{route('search_city_package')}}" method="post">
+               {{csrf_field()}}
                <div class="form-group">
                   <b>Where you want to travel?</b>
                   <select name="city" class="zt-control">
@@ -108,20 +109,20 @@
                <div class="col-md-4 col-sm-12 col-xs-12">
                   <div class="single-latest-news">
                      <div class="img-box">
-                        <img src="images/blog/sweet-ont-the-beach.png" alt=""/>
+                        <img src="{{asset('images/blog/sweet-ont-the-beach.png')}}" alt=""/>
                      </div>
                      <div class="text-box position-relative">
                         <span class="angle-up"></span>
                         <h3>Sweet Love On The Beach</h3>
-                        <p>Honey Moon</p>
-                        <a href="#" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
+                        <p>Honeymoon</p>
+                        <a href="{{route('search_package_type','honeymoon')}}" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
                      </div>
                   </div>
                </div>
                <div class="col-md-4 col-sm-12 col-xs-12">
                   <div class="single-latest-news">
                      <div class="img-box">
-                        <img src="images/blog/cool-place-visit-full-house.png" alt=""/>
+                        <img src="{{asset('images/blog/cool-place-visit-full-house.png')}}" alt=""/>
                      </div>
                      <div class="text-box position-relative">
                         <span class="angle-up"></span>
@@ -134,7 +135,7 @@
                <div class="col-md-4 col-sm-12 col-xs-12">
                   <div class="single-latest-news">
                      <div class="img-box">
-                        <img src="images/blog/color-aloft-balloon-festivan.png" alt=""/>
+                        <img src="{{asset('images/blog/color-aloft-balloon-festivan.png')}}" alt=""/>
                      </div>
                      <div class="text-box position-relative">
                         <span class="angle-up"></span>

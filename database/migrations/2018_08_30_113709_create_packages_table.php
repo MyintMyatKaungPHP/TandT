@@ -23,6 +23,7 @@ class CreatePackagesTable extends Migration
             $table->longText('geo_location');
             $table->integer('duration');
             $table->string('images');
+            $table->enum('type',['normal','honeymoon','vacation','sightseeing'])->default('normal');
             $table->enum('del_status',['1','0'])->default('0');
             $table->timestamps();
         });

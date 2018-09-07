@@ -66,6 +66,33 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-xl-2 col-form-label">Package Type</label>
+                                <div class="col-xl-6 col-10">
+                                    <select name="type" id="select2-1" class="form-control">
+                                        <option value="normal"
+                                                @if($package->type == 'normal')
+                                                selected
+                                                @endif
+                                        >Normal Trip</option>
+                                        <option value="honeymoon"
+                                                @if($package->type == 'honeymoon')
+                                                selected
+                                                @endif
+                                        >Honeymoon Trip</option>
+                                        <option value="vacation"
+                                                @if($package->type == 'vacation')
+                                                selected
+                                                @endif
+                                        >Vacation Trip</option>
+                                        <option value="sightseeing"
+                                                @if($package->type == 'sightseeing')
+                                                selected
+                                                @endif
+                                        >Sightseeing Trip</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-xl-2 col-form-label">Description</label>
                                 <div class="col-md-10">
                                     <textarea name="description" class="textareaeditor"><?php echo $package->description; ?></textarea>

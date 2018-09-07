@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('role',['admin','editor','user'])->default('user');
-            $table->integer('phone');
+            $table->string('phone');
             $table->longText('address');
             $table->string('image')->nullable();
             $table->enum('ban_status',['0','1'])->default('0');

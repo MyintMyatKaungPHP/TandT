@@ -64,6 +64,7 @@ class package_Controller extends Controller
         $package->title = request()->title;
         $package->city_id = request()->city_id;
         $package->price = request()->price;
+        $package->type = request()->type;
         $package->description = request()->description;
         $package->itinerary = request()->itinerary;
         $package->geo_location = request()->geo_location;
@@ -148,6 +149,7 @@ class package_Controller extends Controller
         $package->title = request()->title;
         $package->city_id = request()->city_id;
         $package->price = request()->price;
+        $package->type = request()->type;
         $package->description = request()->description;
         $package->itinerary = request()->itinerary;
         $package->geo_location = request()->geo_location;

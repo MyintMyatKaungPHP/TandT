@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class zone_Controller extends Controller
 {
     protected function index(){
-        $cities = packages::where('del_status','0')->get();
+        $cities = packages::where('del_status','0')->groupBy('city_id')->get();
         $packages = packages::where('del_status','0')->orderBy('id', 'desc')->limit(6)->get();
         return view('zone.index',compact('packages','cities'));
     }

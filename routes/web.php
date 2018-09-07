@@ -54,6 +54,10 @@ Route::get('user/profile','user_Controller@user_profile')->name('user.profile');
 //blacklist
 Route::resource('manage_user','blacklist_Controller');
 Route::resource('mangge_user/blacklist','blacklist_user_Controller');
+
+//search
+Route::post('search/packages','search_Controller@city_packages')->name('search_city_package');
+Route::get('search/packages_type/{type}','search_Controller@packages_type')->name('search_package_type');
 /*
  * For Ajax Script
  */

@@ -53,6 +53,15 @@
                         <hr>
                         <div class="row">
                             <div class="col-xl-2">
+                                <b>Type</b>
+                            </div>
+                            <div class="col-xl-10">
+                                <p>{{$package->type}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xl-2">
                                 <b>Description</b>
                             </div>
                             <div class="col-xl-10">
