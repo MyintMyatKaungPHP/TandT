@@ -126,9 +126,9 @@
                      </div>
                      <div class="text-box position-relative">
                         <span class="angle-up"></span>
-                        <h3>Central Myanmar Trip</h3>
+                        <h3>Vacation Trip</h3>
                         <p>Etiam mattis, tortor non tincidunt euismod, ipsum arcu condimentum ligula, at ornare dolor turpis id massa. Ut sit amet augue lobortis lacus scelerisque volutpat.</p>
-                        <a href="#" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
+                        <a href="{{route('search_package_type','vacation')}}" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
                      </div>
                   </div>
                </div>
@@ -139,9 +139,9 @@
                      </div>
                      <div class="text-box position-relative">
                         <span class="angle-up"></span>
-                        <h3>Hawaii Trip</h3>
+                        <h3>Sightseeing Trip</h3>
                         <p>Etiam mattis, tortor non tincidunt euismod, ipsum arcu condimentum ligula, at ornare dolor turpis id massa. Ut sit amet augue lobortis lacus scelerisque volutpat.</p>
-                        <a href="#" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
+                        <a href="{{route('search_package_type','sightseeing')}}" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
                      </div>
                   </div>
                </div>
@@ -200,111 +200,111 @@
       <section class="gallery-member sec-padding-top">
          <div class="sec-title text-center sec-title-padding">
             <h2>Gallery</h2>
-            <span class="tagline">Phasellus vehicula malesuada quam, a condimentum mauris dignissim vulputate.</span>
+            <span class="tagline">Travel photos</span>
             <span class="img-border"></span>
          </div>
          <ul id="gallerymember" class="list-unstyled row row-collapse">
-            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/1.jpg')}}" data-sub-html="<h4>India Tour</h4><p>June 03, 2016</p>">
+            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/bgn.jpeg')}}"  data-sub-html="<h4>Bagan</h4><p>June 03, 2016</p>">
                <a href="#">
                   <div class="img-box zt-overlay zt-overlay-hover">
                      <div class="zt-overlay-panel zt-overlay-background zt-flex zt-flex-center zt-flex-middle zt-overlay-scale">
                         <div class="box-gallery">
-                           <h3 class="color-primary">India Tour</h3>
-                           <p>June 03, 2016</p>
+                           <h3 class="color-primary">Bagan Tour</h3>
+                           <p>June 03, 2018</p>
                         </div>
                      </div>
-                     <img src="{{asset('images/thumbnails/india-taj-mahal-agra-architecture-travel.png')}}" alt=""/>
+                     <img src="{{asset('images/thumbnails/bgn.jpeg')}}" style="height: 300px !important;" alt=""/>
                   </div>
                </a>
             </li>
-            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/2.jpg')}}" data-sub-html="<h4>India Tour</h4><p>June 03, 2016</p>">
+            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/mdy1.jpg')}}" data-sub-html="<h4>Mandalay Tour</h4><p>June 03, 2018</p>">
                <a href="#">
                   <div class="img-box zt-overlay zt-overlay-hover">
                      <div class="zt-overlay-panel zt-overlay-background zt-flex zt-flex-center zt-flex-middle zt-overlay-scale">
                         <div class="box-gallery">
-                           <h3 class="color-primary">India Tour</h3>
-                           <p>June 03, 2016</p>
+                           <h3 class="color-primary">Mandalay Tour</h3>
+                           <p>June 03, 2018</p>
                         </div>
                      </div>
-                     <img src="{{asset('images/thumbnails/colorful-houses-with-sunshades.png')}}" alt=""/>
+                     <img src="{{asset('images/thumbnails/mdy1.jpg')}}" style="height: 300px !important;" alt=""/>
                   </div>
                </a>
             </li>
-            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/3.jpg')}}" data-sub-html="<h4>India Tour</h4><p>June 03, 2016</p>">
+            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/inle.jpg')}}" data-sub-html="<h4>Inle Tour</h4><p>June 03, 2016</p>">
                <a href="#">
                   <div class="img-box zt-overlay zt-overlay-hover">
                      <div class="zt-overlay-panel zt-overlay-background zt-flex zt-flex-center zt-flex-middle zt-overlay-scale">
                         <div class="box-gallery">
-                           <h3 class="color-primary">India Tour</h3>
-                           <p>June 03, 2016</p>
+                           <h3 class="color-primary">Inle Tour</h3>
+                           <p>June 03, 2018</p>
                         </div>
                      </div>
-                     <img src="{{asset('images/thumbnails/oia-santorini-greece-sunset-island-sea-tourism-1.png')}}" alt=""/>
+                     <img src="{{asset('images/thumbnails/inle.jpg')}}" style="height: 300px !important;" alt=""/>
                   </div>
                </a>
             </li>
-            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/4.jpg')}}" data-sub-html="<h4>India Tour</h4><p>June 03, 2016</p>">
+            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/shwedagon.jpg')}}" data-sub-html="<h4>Yangon Tour</h4><p>June 03, 2016</p>">
                <a href="#">
                   <div class="img-box zt-overlay zt-overlay-hover">
                      <div class="zt-overlay-panel zt-overlay-background zt-flex zt-flex-center zt-flex-middle zt-overlay-scale">
                         <div class="box-gallery">
-                           <h3 class="color-primary">India Tour</h3>
-                           <p>June 03, 2016</p>
+                           <h3 class="color-primary">Yangon Tour</h3>
+                           <p>July 04, 2018</p>
                         </div>
                      </div>
-                     <img src="{{asset('images/thumbnails/santorini-greece.png')}}" alt=""/>
+                     <img src="{{asset('images/thumbnails/shwedagon.jpg')}}" style="height: 300px !important;" alt=""/>
                   </div>
                </a>
             </li>
-            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('mages/tour/5.jpg')}}" data-sub-html="<h4>India Tour</h4><p>June 03, 2016</p>">
+            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('mages/tour/sule.jpg')}}" data-sub-html="<h4>Yangon Tour</h4><p>July 04, 2018</p>">
                <a href="#">
                   <div class="img-box zt-overlay zt-overlay-hover">
                      <div class="zt-overlay-panel zt-overlay-background zt-flex zt-flex-center zt-flex-middle zt-overlay-scale">
                         <div class="box-gallery">
-                           <h3 class="color-primary">India Tour</h3>
-                           <p>June 03, 2016</p>
+                           <h3 class="color-primary">Yangon Tour</h3>
+                           <p>July 04, 2018</p>
                         </div>
                      </div>
-                     <img src="{{asset('images/thumbnails/pisa-tower.png')}}" alt=""/>
+                     <img src="{{asset('images/thumbnails/sule.jpg')}}" style="height: 300px !important;" alt=""/>
                   </div>
                </a>
             </li>
-            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/6.jpg')}}" data-sub-html="<h4>India Tour</h4><p>June 03, 2016</p>">
+            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/img1.jpg')}}" data-sub-html="<h4>Bagan Tour</h4><p>June 11, 2016</p>">
                <a href="#">
                   <div class="img-box zt-overlay zt-overlay-hover">
                      <div class="zt-overlay-panel zt-overlay-background zt-flex zt-flex-center zt-flex-middle zt-overlay-scale">
                         <div class="box-gallery">
-                           <h3 class="color-primary">India Tour</h3>
-                           <p>June 03, 2016</p>
+                           <h3 class="color-primary">Bagan Tour</h3>
+                           <p>June 11, 2018</p>
                         </div>
                      </div>
-                     <img src="{{asset('images/thumbnails/arno-river-florence-italy-reflection-river.png')}}" alt=""/>
+                     <img src="{{asset('images/thumbnails/img1.jpg')}}" style="height: 300px !important;" alt=""/>
                   </div>
                </a>
             </li>
-            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/7.jpg')}}" data-sub-html="<h4>India Tour</h4><p>June 03, 2016</p>">
+            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/img2.jpg')}}" data-sub-html="<h4>Taunggyi Trip</h4><p>Aug 03, 2016</p>">
                <a href="#">
                   <div class="img-box zt-overlay zt-overlay-hover">
                      <div class="zt-overlay-panel zt-overlay-background zt-flex zt-flex-center zt-flex-middle zt-overlay-scale">
                         <div class="box-gallery">
-                           <h3 class="color-primary">India Tour</h3>
-                           <p>June 03, 2016</p>
+                           <h3 class="color-primary">Taunggyi</h3>
+                           <p>Aug 03, 2016</p>
                         </div>
                      </div>
-                     <img src="{{asset('images/thumbnails/5825408292_11759e3304_o.png')}}" alt=""/>
+                     <img src="{{asset('images/thumbnails/img2.jpg')}}" style="height: 300px !important;" alt=""/>
                   </div>
                </a>
             </li>
-            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/8.jpg')}}" data-sub-html="<h4>India Tour</h4><p>June 03, 2016</p>">
+            <li class="col-md-3 col-sm-6 col-xs-6" data-responsive="" data-src="{{asset('images/tour/img3.jpg')}}" data-sub-html="<h4>Bagan Tour</h4><p>Sept 03, 2016</p>">
                <a href="#">
                   <div class="img-box zt-overlay zt-overlay-hover">
                      <div class="zt-overlay-panel zt-overlay-background zt-flex zt-flex-center zt-flex-middle zt-overlay-scale">
                         <div class="box-gallery">
-                           <h3 class="color-primary">India Tour</h3>
-                           <p>June 03, 2016</p>
+                           <h3 class="color-primary">Bagan Tour</h3>
+                           <p>Sept 03, 2016</p>
                         </div>
                      </div>
-                     <img src="{{asset('images/thumbnails/6979633505_d042009b47_k.png')}}" alt=""/>
+                     <img src="{{asset('images/thumbnails/img3.jpg')}}" style="height: 300px !important;" alt=""/>
                   </div>
                </a>
             </li>
@@ -322,22 +322,34 @@
             <div class="our-partners-carousel">
                <div class="owl-carousel">
                   <div class="item">
-                     <img src="{{asset('images/carousel/themeforest.png')}}" alt=""/>
+                     <a href="http://accor.com" target="_blank">
+                        <img src="{{asset('images/carousel/accor.png')}}" style="height: 100px !important;" alt=""/>
+                     </a>
                   </div>
                   <div class="item">
-                     <img src="{{asset('images/carousel/audiojungle.png')}}" alt=""/>
+                     <a href="https://www.accorhotels.com" target="_blank">
+                        <img src="{{asset('images/carousel/novotel.png')}}" style="height: 100px !important;" alt=""/>
+                     </a>
                   </div>
                   <div class="item">
-                     <img src="{{asset('images/carousel/photodune.png')}}" alt=""/>
+                     <a href="http://www.sedonahotels.com.sg/yangon/" target="_blank">
+                        <img src="{{asset('images/carousel/sedona.png')}}" style="height: 100px !important;" alt=""/>
+                     </a>
                   </div>
                   <div class="item">
-                     <img src="{{asset('images/carousel/graphicriver.png')}}" alt=""/>
+                     <a href="http://www.shangri-la.com" target="_blank">
+                        <img src="{{asset('images/carousel/shangrila.png')}}" style="height: 100px !important;" lt=""/>
+                     </a>
                   </div>
                   <div class="item">
-                     <img src="{{asset('images/carousel/themeforest.png')}}" alt=""/>
+                     <a href="https://www.inyalakehotel.com/" target="_blank">
+                        <img src="{{asset('images/carousel/inya.png')}}" style="height: 100px !important;" alt=""/>
+                     </a>
                   </div>
                   <div class="item">
-                     <img src="{{asset('images/carousel/audiojungle.png')}}" alt=""/>
+                     <a href="https://www.lottehotel.com/yangon-hotel/en/information.html" target="_blank">
+                        <img src="{{asset('images/carousel/lotte.png')}}" style="height: 100px !important;" alt=""/>
+                     </a>
                   </div>
                </div>
             </div>

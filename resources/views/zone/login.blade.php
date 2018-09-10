@@ -20,21 +20,34 @@
                         @include('zone.layout.error')
                         <form class="form filter-box" enctype="multipart/form-data" action="{{route('attepmtLogin')}}" method="post">
                             {{csrf_field()}}
-                            <div class="form-group">
-                                <div class="input-icon">
-                                    <input type="email" class="zt-control" placeholder="Email" name="email">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="input-icon">
+                                            <input type="email" class="zt-control" placeholder="Email" name="email">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="input-icon">
-                                    <input type="password" class="zt-control" placeholder="Password" name="password">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="input-icon">
+                                            <input type="password" class="zt-control" placeholder="Password" name="password">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="zt-flex zt-flex-center">
-                                    <button type="submit" class="btn zt-primary btn-lg btn-full">Login</button>
+
+
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="zt-flex zt-flex-center">
+                                        <button type="submit" class="btn zt-primary btn-lg btn-full">Login</button>
+                                    </div>
                                 </div>
                             </div>
+
                         </form>
                     </div>
                 </div>

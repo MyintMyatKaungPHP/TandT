@@ -30,7 +30,7 @@
                                     <th>From</th>
                                     <th>To</th>
                                     <th>Transport Type</th>
-                                    <th>Price</th>
+                                    <th>Price (MK)</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -40,7 +40,7 @@
                                     <th>From</th>
                                     <th>To</th>
                                     <th>Transport Type</th>
-                                    <th>Price</th>
+                                    <th>Price (MK)</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>
@@ -52,7 +52,7 @@
                                         <td>{{$r->from_city}}</td>
                                         <td>{{$r->to_city}}</td>
                                         <td>{{$r->type}}</td>
-                                        <td>$ {{$r->price}}</td>
+                                        <td> {{$r->price}}</td>
                                         <td class="text-center">
                                             <a href="{{route('manage_route.edit',$r->id)}}" class="badge badge-info">Update</a>
                                             @if(Auth::user()->role=='admin')

@@ -29,7 +29,7 @@
                                     <th data-priority="1">No.</th>
                                     <th>Name</th>
                                     <th>Place</th>
-                                    <th>Price</th>
+                                    <th>Price (MK)</th>
                                     <th>Website Address</th>
                                     <th>Action</th>
                                 </tr>
@@ -39,7 +39,7 @@
                                     <th>No.</th>
                                     <th>Name</th>
                                     <th>Place</th>
-                                    <th>Price</th>
+                                    <th>Price (MMK)</th>
                                     <th>Website Address</th>
                                     <th>Action</th>
                                 </tr>
@@ -51,7 +51,7 @@
                                         <td class="text-center">@php echo $i.'.';$i++; @endphp</td>
                                         <td>{{$h->name}}</td>
                                         <td>{{$h->place}}</td>
-                                        <td>$ {{$h->price}} / day</td>
+                                        <td> {{$h->price}} / day</td>
                                         <td>{{$h->link}}</td>
                                         <td class="text-center">
                                             <a href="{{route('manage_hotel.edit',$h->id)}}" class="badge badge-info">Update</a>

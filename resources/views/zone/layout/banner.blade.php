@@ -2,9 +2,9 @@
     <div id="slider1" class="rev_slider"  data-version="5.0">
         <ul>
             <li data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" >
-                <img src="{{asset('images/slider/banner-1.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina/>
+                <img src="{{asset('images/slider/bagan.png')}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina/>
                 <div class="tp-caption tp-resizeme banner-caption-h1 text-center"
-                     data-x="center" data-hoffset="-220"
+                     data-x="center" data-hoffset="-155"
                      data-y="center" data-voffset="-30"
                      data-whitespace="nowrap"
                      data-transform_idle="o:1;"
@@ -19,10 +19,10 @@
                      data-responsive_offset="on"
 
                      data-elementdelay="0.05" >
-                    TAKE
+                    TRAVEL
                 </div>
                 <div class="tp-caption tp-resizeme banner-caption-h1 color-primary text-center"
-                     data-x="center" data-hoffset="70"
+                     data-x="center" data-hoffset="+100"
                      data-y="center" data-voffset="-30"
                      data-whitespace="nowrap"
                      data-transform_idle="o:1;"
@@ -37,7 +37,7 @@
                      data-responsive_offset="on"
 
                      data-elementdelay="0.05" >
-                    YOUR DREAM
+                    WITH US
                 </div>
                 <div class="tp-caption small_light_white tp-resizeme banner-caption-p text-center"
                      data-x="center"
@@ -56,15 +56,15 @@
                      data-splitin="none"
                      data-splitout="none"
                      data-responsive_offset="on">
-                    Your Travel, Your Life
+                    Age is no barrier when it comes to travel..
                 </div>
 
             </li>
             <li data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-description="">
 
-                <img src="{{asset('images/slider/banner-6.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                <img src="{{asset('images/slider/beach.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                 <div class="tp-caption sfl tp-resizeme banner-caption-h1 "
-                     data-x="center" data-hoffset="-260"
+                     data-x="center" data-hoffset="-140"
                      data-y="center" data-voffset="-50"
                      data-transform_idle="o:1;"
                      data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
@@ -72,10 +72,11 @@
                      data-start="1000"
                      data-splitin="none"
                      data-splitout="none" >
-                    adventure is
+                    The adventure
+
                 </div>
                 <div class="tp-caption sfl tp-resizeme banner-caption-h1 color-primary "
-                     data-x="center" data-hoffset="200"
+                     data-x="center" data-hoffset="+250"
                      data-y="center" data-voffset="-50"
                      data-transform_idle="o:1;"
                      data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
@@ -83,7 +84,8 @@
                      data-start="1000"
                      data-splitin="none"
                      data-splitout="none" >
-                    worthwhile
+                    BEGINS!
+
                 </div>
                 <div class="tp-caption  tp-resizeme banner-caption-p text-center "
                      data-x="center" data-hoffset="0"
@@ -99,7 +101,7 @@
                      data-splitin="none"
                      data-splitout="none"
                      data-responsive_offset="on">
-                    For my part, I travel not to go anywhere, but to go. I travel for travel’s sake. <br/> The great affair is to move
+                    You never really TRAVEL ALONE. <br> The world is full of FRIENDS waiting to get to know you.
                 </div>
             </li>
         </ul>

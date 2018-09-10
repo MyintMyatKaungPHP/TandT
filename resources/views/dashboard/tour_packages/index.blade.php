@@ -29,7 +29,7 @@
                                     <th data-priority="1">No.</th>
                                     <th>Title</th>
                                     <th>Destination</th>
-                                    <th>Price</th>
+                                    <th>Price (MMK)</th>
                                     <th>Duration</th>
                                     <th>Action</th>
                                 </tr>
@@ -39,7 +39,7 @@
                                     <th>No.</th>
                                     <th>Title</th>
                                     <th>Destination</th>
-                                    <th>Price</th>
+                                    <th>Price (MMK)</th>
                                     <th>Duration</th>
                                     <th>Action</th>
                                 </tr>

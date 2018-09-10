@@ -91,13 +91,15 @@
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <button type="submit" class="btn zt-primary btn-lg btn-full">Update</button>
                                         </div>
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
-                                            <form action="{{route('registration.destroy',Auth::id())}}" method="post">
-                                                {{csrf_field()}}
-                                                {{method_field('Delete')}}
-                                                <button type="submit" class="btn zt-primary btn-lg btn-full">Delete</button>
-                                            </form>
-                                        </div>
+                                        @if(Auth::user()->role=='user'||Auth::user()->role=='editor')
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <form action="{{route('registration.destroy',Auth::id())}}" method="post">
+                                                    {{csrf_field()}}
+                                                    {{method_field('Delete')}}
+                                                    <button type="submit" class="btn zt-primary btn-lg btn-full">Delete</button>
+                                                </form>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

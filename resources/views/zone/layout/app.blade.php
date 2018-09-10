@@ -196,7 +196,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-2 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="footer-widget post-link-widget">
                     <div class="title">
                         <h3>USEFUL LINKS</h3>
@@ -211,95 +211,95 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="footer-widget gallery-widget">
-                    <div class="title">
-                        <h3>GALLERY</h3>
-                    </div>
-                    <ul id="gallerywidget" class="list-unstyled">
-                        <li data-src="{{asset('images/tour/3.jpg')}}">
-                            <a href="#">
-                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
-                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
-                                        <span class="fa fa-plus"></span>
-                                    </div>
-                                    <img src="{{asset('images/thumbnails/oia-santorini-greece-sunset-island-sea-tourism-1.png')}}" alt="" />
-                                </div>
-                            </a>
-                        </li>
-                        <li data-src="{{asset('images/tour/2.jpg')}}">
-                            <a href="#">
-                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
-                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
-                                        <span class="fa fa-plus"></span>
-                                    </div>
-                                    <img src="{{asset('images/thumbnails/colorful-houses-with-sunshades.png')}}" alt="" />
-                                </div>
-                            </a>
-                        </li>
-                        <li data-src="{{asset('images/tour/1.jpg')}}">
-                            <a href="#">
-                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
-                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
-                                        <span class="fa fa-plus"></span>
-                                    </div>
-                                    <img src="{{asset('images/thumbnails/india-taj-mahal-agra-architecture-travel.png')}}" alt="" />
-                                </div>
-                            </a>
-                        </li>
-                        <li data-src="{{asset('images/tour/4.jpg')}}">
-                            <a href="#">
-                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
-                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
-                                        <span class="fa fa-plus"></span>
-                                    </div>
-                                    <img src="{{asset('images/thumbnails/santorini-greece.png')}}" alt="" />
-                                </div>
-                            </a>
-                        </li>
-                        <li data-src="{{asset('images/tour/5.jpg')}}">
-                            <a href="#">
-                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
-                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
-                                        <span class="fa fa-plus"></span>
-                                    </div>
-                                    <img src="{{asset('images/thumbnails/pisa-tower.png')}}" alt="" />
-                                </div>
-                            </a>
-                        </li>
-                        <li data-src="{{asset('images/tour/building-ocean-buildings.jpg')}}">
-                            <a href="#">
-                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
-                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
-                                        <span class="fa fa-plus"></span>
-                                    </div>
-                                    <img src="{{asset('images/thumbnails/toronto.jpg')}}" alt="" />
-                                </div>
-                            </a>
-                        </li>
-                        <li data-src="{{asset('images/tour/tram-city-urban-transport-transportation-travel.jpg')}}">
-                            <a href="#">
-                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
-                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
-                                        <span class="fa fa-plus"></span>
-                                    </div>
-                                    <img src="{{asset('images/thumbnails/tram-city-urban-transport-transportation-travel.png')}}" alt="" />
-                                </div>
-                            </a>
-                        </li>
-                        <li data-src="{{asset('images/tour/6.jpg')}}">
-                            <a href="#">
-                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
-                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
-                                        <span class="fa fa-plus"></span>
-                                    </div>
-                                    <img src="{{asset('images/thumbnails/arno-river-florence-italy-reflection-river.png')}}" alt="" />
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
+                {{--<div class="footer-widget gallery-widget">--}}
+                    {{--<div class="title">--}}
+                        {{--<h3>GALLERY</h3>--}}
+                    {{--</div>--}}
+                    {{--<ul id="gallerywidget" class="list-unstyled">--}}
+                        {{--<li data-src="{{asset('images/tour/3.jpg')}}">--}}
+                            {{--<a href="#">--}}
+                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
+                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
+                                        {{--<span class="fa fa-plus"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<img src="{{asset('images/thumbnails/oia-santorini-greece-sunset-island-sea-tourism-1.png')}}" alt="" />--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li data-src="{{asset('images/tour/2.jpg')}}">--}}
+                            {{--<a href="#">--}}
+                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
+                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
+                                        {{--<span class="fa fa-plus"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<img src="{{asset('images/thumbnails/colorful-houses-with-sunshades.png')}}" alt="" />--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li data-src="{{asset('images/tour/1.jpg')}}">--}}
+                            {{--<a href="#">--}}
+                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
+                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
+                                        {{--<span class="fa fa-plus"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<img src="{{asset('images/thumbnails/india-taj-mahal-agra-architecture-travel.png')}}" alt="" />--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li data-src="{{asset('images/tour/4.jpg')}}">--}}
+                            {{--<a href="#">--}}
+                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
+                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
+                                        {{--<span class="fa fa-plus"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<img src="{{asset('images/thumbnails/santorini-greece.png')}}" alt="" />--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li data-src="{{asset('images/tour/5.jpg')}}">--}}
+                            {{--<a href="#">--}}
+                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
+                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
+                                        {{--<span class="fa fa-plus"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<img src="{{asset('images/thumbnails/pisa-tower.png')}}" alt="" />--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li data-src="{{asset('images/tour/building-ocean-buildings.jpg')}}">--}}
+                            {{--<a href="#">--}}
+                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
+                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
+                                        {{--<span class="fa fa-plus"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<img src="{{asset('images/thumbnails/toronto.jpg')}}" alt="" />--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li data-src="{{asset('images/tour/tram-city-urban-transport-transportation-travel.jpg')}}">--}}
+                            {{--<a href="#">--}}
+                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
+                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
+                                        {{--<span class="fa fa-plus"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<img src="{{asset('images/thumbnails/tram-city-urban-transport-transportation-travel.png')}}" alt="" />--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li data-src="{{asset('images/tour/6.jpg')}}">--}}
+                            {{--<a href="#">--}}
+                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
+                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
+                                        {{--<span class="fa fa-plus"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<img src="{{asset('images/thumbnails/arno-river-florence-italy-reflection-river.png')}}" alt="" />--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
     </div>
 </footer>

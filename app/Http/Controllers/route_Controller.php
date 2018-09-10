@@ -105,8 +105,8 @@ class route_Controller extends Controller
     public function destroy($id)
     {
         $route = routes::find($id);
-        $route->del_status = '1';
-        $route->save();
+
+        $route->delete();
         return redirect()->back()->with('status','Route Deleting Successfully!');
     }
 }
