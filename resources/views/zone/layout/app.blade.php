@@ -103,7 +103,7 @@
                     </li>
                     <li><a href="#"><b>{{Auth::user()->name}}</b></a></li>
                     <li><a href="{{route('user.profile')}}" class="text text-warning">Edit Profile</a></li>
-                    <li><a href="#" class="text text-warning">View Booking List</a></li>
+                    <li><a href="{{route('goBookingList',Auth::id())}}" class="text text-warning">View Booking List</a></li>
                     @if(Auth::user()->role=="admin"||Auth::user()->role=='editor')
                         <li><a href="{{route('dashboard')}}" class="text text-warning">Dashboard</a></li>
                     @endif

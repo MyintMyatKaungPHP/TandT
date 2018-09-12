@@ -26,6 +26,8 @@ Route::resource('manage_package','package_Controller');
 Route::resource('manage_hotel','hotel_Controller');
 //manage routes
 Route::resource('manage_route','route_Controller');
+//manage booking
+Route::resource('manage_booking','admin_Booking_Controller');
 
 // Website //
 //index page
@@ -58,6 +60,13 @@ Route::resource('mangge_user/blacklist','blacklist_user_Controller');
 //search
 Route::post('search/packages','search_Controller@city_packages')->name('search_city_package');
 Route::get('search/packages_type/{type}','search_Controller@packages_type')->name('search_package_type');
+
+//booking
+Route::resource('user_booking','user_Booking_Controller');
+Route::get('user_booking/list/{id}','user_Booking_Controller@goBookingList')->name('goBookingList');
+
+
+
 /*
  * For Ajax Script
  */

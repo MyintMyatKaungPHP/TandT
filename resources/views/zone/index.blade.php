@@ -184,7 +184,7 @@
                         <div class="excert">
                             <?php
                               echo strip_tags(substr($p->description,0,100));
-                              echo "<b>...</b>";
+                              echo "...";
                             ?>
                         </div>
                         <a href="{{route('package_detail',$p->id)}}" class="btn zt-default btn-lg">Read More</a>

@@ -137,7 +137,7 @@
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <div class="zt-flex zt-flex-center">
-                                            <button type="submit" class="btn zt-primary btn-lg btn-full">BOOK NOW</button>
+                                            <a href="{{route('user_booking.index')}}" type="submit" class="btn zt-primary btn-lg btn-full">BOOK NOW</a>
                                         </div>
                                     </div>
                                 </div>
