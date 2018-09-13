@@ -32,7 +32,10 @@ class zone_Controller extends Controller
         $routes = routes::where('del_status','0')
             ->groupBy('from_city')
             ->get();
-        return view('zone.package_detail',compact('routes','package','hotels','to_city','from_city'));
+
+        $package_id = $id;
+
+        return view('zone.package_detail',compact('routes','package','hotels','to_city','from_city','package_id'));
     }
 
     public function travelType($from_city,$to_city){
@@ -43,15 +46,19 @@ class zone_Controller extends Controller
 
         foreach($routes as $r){
             echo "
-               <option value='{$r->id}'>{$r->type}</option>
+               <option id='{$r->id}' value='{$r->id}'>{$r->type}</option>
             ";
         }
 
     }
 
     public function travelPrice($id){
+
         $price = routes::find($id);
-        echo $price->price;
+        //echo $price->price;
+        $detail['price'] = $price->price;
+        $detail['route_id'] = $id;
+        echo json_encode($detail);
     }
 
     public function travelHotel($to_city){
@@ -68,6 +75,9 @@ class zone_Controller extends Controller
 
     public function hotelPrice($id){
         $price = hotels::find($id);
-        echo $price->price;
+        //echo $price->price;
+        $detail['price'] = $price->price;
+        $detail['hotel_id'] = $id;
+        echo json_encode($detail);
     }
 }

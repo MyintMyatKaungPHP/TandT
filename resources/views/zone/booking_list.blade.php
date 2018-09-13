@@ -28,35 +28,18 @@
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
+                            @foreach($bookings as $b)
                             <tr>
-                                <td>Shwe Inle</td>
-                                <td>Hotel Max (Inle)</td>
-                                <td>3-sept-2018</td>
-                                <td>3</td>
-                                <td>3000</td>
-                                <td>3200</td>
-                                <td>pending</td>
+                                <td>{{$b->packages->title}}</td>
+                                <td>{{$b->hotels->name}}</td>
+                                <td>{{$b->departure_date}}</td>
+                                <td>{{$b->qty}}</td>
+                                <td>{{$b->total_price}}</td>
+                                <td>{{$b->confirm_price}}</td>
+                                <td>{{$b->status}}</td>
                                 <td>
-                                    <a href="{{route('user_booking.show','1')}}" class="badge badge-info">Detail</a>
-                                    <a href="" class="badge badge-success">Update</a>
-                                    <form action="" class="d-inline" method="post" >
-                                        {{csrf_field()}}
-                                        {{method_field('Delete')}}
-                                        <button class="badge badge-danger" type="submit">Cancel</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Shwe Inle</td>
-                                <td>Hotel Max (Inle)</td>
-                                <td>3-sept-2018</td>
-                                <td>3</td>
-                                <td>3000</td>
-                                <td>3200</td>
-                                <td>acknowledge</td>
-                                <td>
-                                    <a href="" class="badge badge-info">Detail</a>
-                                    <a href="" class="badge badge-success">Update</a>
+                                    <a href="{{route('user_booking.show',$b->id)}}" class="badge badge-info">Detail</a>
+                                    <a href="{{route('user_booking.edit',$b->id)}}" class="badge badge-success">Update</a>
                                     <a href="" class="badge badge-purple">Payment</a>
                                     <form action="" class="d-inline" method="post" >
                                         {{csrf_field()}}
@@ -65,23 +48,7 @@
                                     </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Shwe Inle</td>
-                                <td>Hotel Max (Inle)</td>
-                                <td>3-sept-2018</td>
-                                <td>3</td>
-                                <td>3000</td>
-                                <td>3200</td>
-                                <td>confirm</td>
-                                <td>
-                                    <a href="" class="badge badge-info">Detail</a>
-                                    <form action="" class="d-inline" method="post" >
-                                        {{csrf_field()}}
-                                        {{method_field('Delete')}}
-                                        <button class="badge badge-danger" type="submit">Cancel</button>
-                                    </form>
-                                </td>
-                            </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>

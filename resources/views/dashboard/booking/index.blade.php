@@ -23,9 +23,12 @@
                                     <th data-priority="1">No.</th>
                                     <th>Email</th>
                                     <th>Package Name</th>
+                                    <th>People</th>
+                                    <th>Date</th>
                                     <th>Route</th>
                                     <th>Type</th>
                                     <th>Hotel</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -34,44 +37,40 @@
                                     <th>No.</th>
                                     <th>Email</th>
                                     <th>Package Name</th>
+                                    <th>People</th>
+                                    <th>Date</th>
                                     <th>Route</th>
                                     <th>Type</th>
                                     <th>Hotel</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
-                                    <td>1.</td>
-                                    <td>myintmyatkaung@gmail.com</td>
-                                    <td>Shwe Inle</td>
-                                    <td>Yangon <em class="fa fa-arrow-right"></em> Taung Gyi</td>
-                                    <td>Car</td>
-                                    <td>Hotel Max (Inle)</td>
-                                    <td>
-                                        <a href="{{route('manage_booking.edit','1')}}" class="badge badge-info">Reply</a>
-                                        <form action="" class="d-inline" method="post" >
-                                            {{csrf_field()}}
-                                            {{method_field('Delete')}}
-                                            <button class="badge badge-danger" type="submit">Delete</button>
-                                        </form>
-                                    </td>
-                                {{--@php $i=1; @endphp--}}
-                                {{--@foreach($bookings as $b)--}}
-                                    {{--<tr>--}}
-                                        {{--<td class="text-center">@php echo $i.'.';$i++; @endphp</td>--}}
-                                        {{--<td>{{$b->name}}</td>--}}
-                                        {{--<td class="text-center">--}}
-                                            {{--<a href="{{route('manage_city.edit',$c->id)}}" class="badge badge-info">Update</a>--}}
-                                            {{--@if(Auth::user()->role=='admin')--}}
-                                                {{--<form action="{{route('manage_city.destroy',$c->id)}}" class="d-inline" method="post" >--}}
-                                                    {{--{{csrf_field()}}--}}
-                                                    {{--{{method_field('Delete')}}--}}
-                                                    {{--<button class="badge badge-danger" type="submit">Delete</button>--}}
-                                                {{--</form>--}}
-                                            {{--@endif--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                {{--@endforeach--}}
+                                @php $i=1; @endphp
+                                @foreach($bookings as $b)
+                                    <tr>
+                                        <td class="text-center">@php echo $i.'.';$i++; @endphp</td>
+                                        <td>{{$b->users->email}}</td>
+                                        <td>{{$b->packages->title}}</td>
+                                        <td>{{$b->qty}}</td>
+                                        <td>{{$b->departure_date}}</td>
+                                        <td>{{$b->routes->from_city}} <em class="fa fa-arrow-right"></em> {{$b->routes->to_city}}</td>
+                                        <td>{{$b->routes->type}}</td>
+                                        <td>{{$b->hotels->name}}</td>
+                                        <td>{{$b->status}}</td>
+                                        <td class="text-center">
+                                            <a href="{{route('manage_booking.edit',$b->id)}}" class="badge badge-info">Reply</a>
+                                            @if(Auth::user()->role=='admin')
+                                                <form action="{{route('manage_booking.destroy',$b->id)}}" class="d-inline" method="post" >
+                                                    {{csrf_field()}}
+                                                    {{method_field('Delete')}}
+                                                    <button class="badge badge-danger" type="submit">Cancel</button>
+                                                </form>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -64,6 +64,7 @@ Route::get('search/packages_type/{type}','search_Controller@packages_type')->nam
 //booking
 Route::resource('user_booking','user_Booking_Controller');
 Route::get('user_booking/list/{id}','user_Booking_Controller@goBookingList')->name('goBookingList');
+Route::post('user_booking/form','user_Booking_Controller@bookingForm')->name('bookingForm');
 
 
 
@@ -76,7 +77,6 @@ Route::get('travel/type/{from_city}/{to_city}','zone_Controller@travelType');
 Route::get('travel/price/{id}','zone_Controller@travelPrice');
 Route::get('travel/hotel/{to_city}','zone_Controller@travelHotel');
 Route::get('travel/hotelprice/{id}','zone_Controller@hotelPrice');
-
 Route::get('password',function(){
     return bcrypt('123456').' | '.sha1('123456').' | '.md5('123456');
 });

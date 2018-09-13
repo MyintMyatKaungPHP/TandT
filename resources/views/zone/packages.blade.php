@@ -35,7 +35,7 @@
                         </div>
                         <div class="box-content">
                             <h3>{{$p->title}}</h3>
-                            <div class="excert">
+                            <div class="excert" style="height: 60px;">
                                 <?php
                                     echo strip_tags(substr($p->description,0,100));
                                     echo "<b>...</b>";

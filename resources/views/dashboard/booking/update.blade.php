@@ -20,7 +20,7 @@
                                 <b>User Name</b>
                             </div>
                             <div class="col-xl-10">
-                                <p>Myint Myat Kaung</p>
+                                <p>{{$booking->users->name}}</p>
                             </div>
                         </div>
                         <hr>
@@ -29,7 +29,7 @@
                                 <b>User Email</b>
                             </div>
                             <div class="col-xl-10">
-                                <p>myintmyatkaung@gmail.com</p>
+                                <p>{{$booking->users->email}}</p>
                             </div>
                         </div>
                         <hr>
@@ -38,7 +38,7 @@
                                 <b>Package Name</b>
                             </div>
                             <div class="col-xl-10">
-                                <p>Shwe Inle</p>
+                                <p>{{$booking->packages->title}}</p>
                             </div>
                         </div>
                         <hr>
@@ -47,7 +47,25 @@
                                 <b>Duration</b>
                             </div>
                             <div class="col-xl-10">
-                                <p>3 day(s)</p>
+                                <p>{{$booking->packages->duration}} day(s)</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xl-2">
+                                <b>Number of People</b>
+                            </div>
+                            <div class="col-xl-10">
+                                <p>{{$booking->qty}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xl-2">
+                                <b>Departure Date</b>
+                            </div>
+                            <div class="col-xl-10">
+                                <p>{{$booking->departure_date}}</p>
                             </div>
                         </div>
                         <hr>
@@ -56,7 +74,7 @@
                                 <b>Route</b>
                             </div>
                             <div class="col-xl-10">
-                                <p>Yangon <em class="fa fa-arrow-right"></em> Taung Gyi </p>
+                                <p>{{$booking->routes->from_city}} <em class="fa fa-arrow-right"></em> {{$booking->routes->to_city}} </p>
                             </div>
                         </div>
                         <hr>
@@ -65,7 +83,7 @@
                                 <b>Type</b>
                             </div>
                             <div class="col-xl-10">
-                                <p>Car</p>
+                                <p>{{$booking->routes->type}}</p>
                             </div>
                         </div>
                         <hr>
@@ -74,7 +92,7 @@
                                 <b>Hotel</b>
                             </div>
                             <div class="col-xl-10">
-                                <p>Hotel Max (Inle)</p>
+                                <p>{{$booking->hotels->name}}</p>
                             </div>
                         </div>
                         <hr>
@@ -83,7 +101,7 @@
                                 <b>Estimate Price</b>
                             </div>
                             <div class="col-xl-10">
-                                3000 Kyat(s)
+                                {{$booking->total_price}} Kyat(s)
                             </div>
                         </div>
                         <hr>
@@ -92,14 +110,11 @@
                                 <b>User Massage</b>
                             </div>
                             <div class="col-xl-10">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Accusamus blanditiis dicta eos exercitationem fuga inventore iusto,
-                                modi nisi obcaecati porro quia repellendus sapiente similique sit unde,
-                                velit vitae voluptas voluptatibus.
+                                {{$booking->user_msg}}
                             </div>
                         </div>
                         <hr>
-                        <form class="form-horizontal" method="post" action="{{route('manage_booking.update','1')}}" enctype="multipart/form-data">
+                        <form class="form-horizontal" method="post" action="{{route('manage_booking.update',$booking->id)}}" enctype="multipart/form-data">
                             {{csrf_field()}}
                             {{method_field('PUT')}}
                             <div class="row">
@@ -107,7 +122,7 @@
                                     <b>Confirm Price</b>
                                 </div>
                                 <div class="col-xl-10">
-                                    <input type="number" min="1" value="3200">
+                                    <input name="confirm_price" type="number" min="1" value="{{$booking->total_price}}"> Kyat(s)
                                 </div>
                             </div>
                             <hr>

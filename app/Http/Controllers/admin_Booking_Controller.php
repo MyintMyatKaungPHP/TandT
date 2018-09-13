@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\booking\bookings;
+use App\packages\routes;
 use Illuminate\Http\Request;
 
 class admin_Booking_Controller extends Controller
@@ -13,7 +15,8 @@ class admin_Booking_Controller extends Controller
      */
     public function index()
     {
-        return view('dashboard.booking.index');
+        $bookings = bookings::all();
+        return view('dashboard.booking.index', compact('bookings'));
     }
 
     /**
@@ -56,7 +59,8 @@ class admin_Booking_Controller extends Controller
      */
     public function edit($id)
     {
-        return view('dashboard.booking.update');
+        $booking = bookings::find($id);
+        return view('dashboard.booking.update',compact('booking'));
     }
 
     /**
@@ -68,7 +72,12 @@ class admin_Booking_Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $booking = bookings::find($id);
+        $booking -> confirm_price = request()-> confirm_price;
+        $booking -> admin_msg = request()-> admin_msg;
+        $booking -> status = 'acknowledge';
+        $booking -> save();
+        return redirect()->back()->with('status','Booking Replying Successfully!');
     }
 
     /**
