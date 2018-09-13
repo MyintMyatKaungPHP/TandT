@@ -41,39 +41,23 @@ function showToggle($str){
                 {{--For Dashboard--}}
                 <li class=" @php echo  showToggle('dashboard'); @endphp">
                     <a href="{{route('dashboard')}}" title="Dashboard">
-                        <em class="icon-speedometer"></em>
+                        <em class="fa fa-bar-chart"></em>
                         <span data-localize="sidebar.nav.DOCUMENTATION">Dashboard</span>
                     </a>
                 </li>
 
-                {{-- For User Management --}}
-                @if(Auth::user()->role=='admin')
-                <li class=" ">
-                    <a href="#usermanage" title="UserManage" data-toggle="collapse">
-                        <em class="icon-user"></em>
-                        <span data-localize="sidebar.nav.UserManage">User Management</span>
-                        <span class="fa fa-sort-down ml-4"></span>
+                {{--For Booking--}}
+                <li class=" @php echo  showToggle('manage_booking'); @endphp">
+                    <a href="{{route('manage_booking.index')}}" title="Booking">
+                        <em class="fa fa-book"></em>
+                        <span data-localize="sidebar.nav.BOOKING">Manage Booking</span>
                     </a>
-                    <ul class="sidebar-nav sidebar-subnav collapse @php echo  showToggle('manage_user'); @endphp"  id="usermanage">
-                        <li class="sidebar-subnav-header">User Management</li>
-                        <li class="@php echo  showToggle('manage_user'); @endphp">
-                            <a href="{{route('manage_user.index')}}" title="ManageUser">
-                                <span>Manage Users</span>
-                            </a>
-                        </li>
-                        <li class="@php echo  showToggle('blacklist'); @endphp">
-                            <a href="{{route('blacklist.index')}}" title="Blacklist">
-                                <span>Blacklist Users</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                @endif
 
                 {{-- For Tour Packages --}}
                 <li class=" ">
                     <a href="#tourpackages" title="TourPackages" data-toggle="collapse">
-                        <em class="icon-graph"></em>
+                        <em class="fa fa-gift"></em>
                         <span data-localize="sidebar.nav.TourPackages">Tour Packages</span>
                         <span class="fa fa-sort-down ml-4"></span>
                     </a>
@@ -102,7 +86,29 @@ function showToggle($str){
                     </ul>
                 </li>
 
-
+                {{-- For User Management --}}
+                @if(Auth::user()->role=='admin')
+                    <li class=" ">
+                        <a href="#usermanage" title="UserManage" data-toggle="collapse">
+                            <em class="fa fa-users"></em>
+                            <span data-localize="sidebar.nav.UserManage">User Management</span>
+                            <span class="fa fa-sort-down ml-4"></span>
+                        </a>
+                        <ul class="sidebar-nav sidebar-subnav collapse @php echo  showToggle('manage_user'); @endphp"  id="usermanage">
+                            <li class="sidebar-subnav-header">User Management</li>
+                            <li class="@php echo  showToggle('manage_user'); @endphp">
+                                <a href="{{route('manage_user.index')}}" title="ManageUser">
+                                    <span>Manage Users</span>
+                                </a>
+                            </li>
+                            <li class="@php echo  showToggle('blacklist'); @endphp">
+                                <a href="{{route('blacklist.index')}}" title="Blacklist">
+                                    <span>Blacklist Users</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
 
                 {{-- Go To Website (front-end) --}}
                 <li class="nav-heading ">
@@ -110,8 +116,16 @@ function showToggle($str){
                 </li>
                 <li class=" ">
                     <a href="{{route('zone')}}" title="website">
-                        <em class="icon-doc"></em>
-                        <span data-localize="sidebar.nav.website">Website</span>
+                        <img class="img-fluid" src="{{asset('images/favicon.ico')}}"  alt="App Logo">
+                        <span data-localize="sidebar.nav.website"> Zone Website</span>
+                    </a>
+                </li>
+
+                {{-- Logout button --}}
+                <li class=" ">
+                    <a href="{{route('user.logout')}}" class="btn btn-outline-danger" title="logout">
+                        <em class="icon-logout"></em>
+                        <span data-localize="sidebar.nav.website">Logout</span>
                     </a>
                 </li>
             </ul>

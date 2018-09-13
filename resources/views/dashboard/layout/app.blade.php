@@ -160,7 +160,7 @@
     </section>
     <!-- Page footer-->
     <footer class="footer-container">
-        <span>&copy; 2018 - Zone Travels & Tours</span>
+        <span>&copy; 2018 - Zone Travels & Tours Management System</span>
     </footer>
 </div>
 <!-- =============== VENDOR SCRIPTS ===============-->

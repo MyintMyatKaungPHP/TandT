@@ -56,7 +56,7 @@ class admin_Booking_Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.booking.update');
     }
 
     /**
