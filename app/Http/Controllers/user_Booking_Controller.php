@@ -24,7 +24,8 @@ class user_Booking_Controller extends Controller
             $hotel = hotels::find(request()->hotel_id);
             $hotel_cost = $hotel->price * $package->duration;
             $estimate_total = $package->price + $route->price + $hotel_cost;
-            return view('zone.booking_form',compact('package','route','estimate_total','hotel','hotel_cost'));
+            $cur_date=date('Y-m-d');
+            return view('zone.booking_form',compact('package','route','estimate_total','hotel','hotel_cost','cur_date'));
         }else{
             return redirect(route('login'));
         }

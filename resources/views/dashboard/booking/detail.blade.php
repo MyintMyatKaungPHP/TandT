@@ -4,7 +4,7 @@
     <div class="content-wrapper">
         <div class="content-heading">
             <div>
-                Reply Tour Information
+                Tour Information Detail
             </div>
         </div>
         <div class="row">
@@ -114,34 +114,23 @@
                             </div>
                         </div>
                         <hr>
-                        <form class="form-horizontal" method="post" action="{{route('manage_booking.update',$booking->id)}}" enctype="multipart/form-data">
-                            {{csrf_field()}}
-                            {{method_field('PUT')}}
-                            <div class="row">
-                                <div class="col-xl-2">
-                                    <b>Confirm Price</b>
-                                </div>
-                                <div class="col-xl-10">
-                                    <input name="confirm_price" type="number" min="1" value="{{$booking->total_price}}"> Kyats
-                                </div>
+                        <div class="row">
+                            <div class="col-xl-2">
+                                <b>Confirm Price</b>
                             </div>
-                            <hr>
-                            <div class="form-group row">
-                                <div class="col-xl-2">
-                                    <b>Message to Customer</b>
-                                </div>
-                                <div class="col-xl-10">
-                                    <textarea name="admin_msg" id="" rows="10" class="form-control">{{$booking->admin_msg}}</textarea>
-                                </div>
+                            <div class="col-xl-10">
+                                {{$booking->confirm_price}} Kyats
                             </div>
-                            <div class="form-group row">
-                                <div class="col-xl-2"></div>
-                                <div class="col-xl-10">
-                                    <button class="btn btn-sm btn-green" type="submit">Reply</button>
-                                    <button class="btn btn-sm btn-secondary" type="reset">Cancel</button>
-                                </div>
+                        </div>
+                        <hr>
+                        <div class="form-group row">
+                            <div class="col-xl-2">
+                                <b>Message to Customer</b>
                             </div>
-                        </form>
+                            <div class="col-xl-10">
+                                {{$booking->admin_msg}}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

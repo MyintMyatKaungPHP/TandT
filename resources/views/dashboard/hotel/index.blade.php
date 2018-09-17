@@ -29,7 +29,7 @@
                                     <th data-priority="1">No.</th>
                                     <th>Name</th>
                                     <th>Place</th>
-                                    <th>Price (MK)</th>
+                                    <th>Price (MMK)</th>
                                     <th>Website Address</th>
                                     <th>Action</th>
                                 </tr>

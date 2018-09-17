@@ -30,7 +30,7 @@
                                     <th>From</th>
                                     <th>To</th>
                                     <th>Transport Type</th>
-                                    <th>Price (MK)</th>
+                                    <th>Price (MMK)</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -40,7 +40,7 @@
                                     <th>From</th>
                                     <th>To</th>
                                     <th>Transport Type</th>
-                                    <th>Price (MK)</th>
+                                    <th>Price (MMK)</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>

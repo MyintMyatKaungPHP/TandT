@@ -25,9 +25,9 @@
                                     <th>Package Name</th>
                                     <th>People</th>
                                     <th>Date</th>
-                                    <th>Route</th>
-                                    <th>Type</th>
-                                    <th>Hotel</th>
+                                    {{--<th>Route</th>--}}
+                                    {{--<th>Type</th>--}}
+                                    {{--<th>Hotel</th>--}}
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -39,9 +39,9 @@
                                     <th>Package Name</th>
                                     <th>People</th>
                                     <th>Date</th>
-                                    <th>Route</th>
-                                    <th>Type</th>
-                                    <th>Hotel</th>
+                                    {{--<th>Route</th>--}}
+                                    {{--<th>Type</th>--}}
+                                    {{--<th>Hotel</th>--}}
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -55,14 +55,15 @@
                                         <td>{{$b->packages->title}}</td>
                                         <td>{{$b->qty}}</td>
                                         <td>{{$b->departure_date}}</td>
-                                        <td>{{$b->routes->from_city}} <em class="fa fa-arrow-right"></em> {{$b->routes->to_city}}</td>
-                                        <td>{{$b->routes->type}}</td>
-                                        <td>{{$b->hotels->name}}</td>
+                                        {{--<td>{{$b->routes->from_city}} <em class="fa fa-arrow-right"></em> {{$b->routes->to_city}}</td>--}}
+                                        {{--<td>{{$b->routes->type}}</td>--}}
+                                        {{--<td>{{$b->hotels->name}}</td>--}}
                                         <td>{{$b->status}}</td>
                                         <td class="text-center">
 
                                             @if(Auth::user()->role=='admin')
                                                 @if($b->status == 'pending')
+                                                    <a href="{{route('manage_booking.show',$b->id)}}" class="badge badge-purple">Detail</a>
                                                     <a href="{{route('manage_booking.edit',$b->id)}}" class="badge badge-info">Reply</a>
                                                     <form action="{{route('manage_booking.destroy',$b->id)}}" class="d-inline" method="post" >
                                                         {{csrf_field()}}
@@ -71,11 +72,15 @@
                                                     </form>
                                                 @endif
                                                 @if($b->status == 'acknowledge')
-                                                    <form action="{{route('manage_booking.destroy',$b->id)}}" class="d-inline" method="post" >
+                                                        <a href="{{route('manage_booking.show',$b->id)}}" class="badge badge-purple">Detail</a>
+                                                        <form action="{{route('manage_booking.destroy',$b->id)}}" class="d-inline" method="post" >
                                                         {{csrf_field()}}
                                                         {{method_field('Delete')}}
                                                         <button class="badge badge-danger" type="submit">Cancel</button>
                                                     </form>
+                                                @endif
+                                                @if($b->status == 'confirm')
+                                                        <a href="{{route('manage_booking.show',$b->id)}}" class="badge badge-purple">Detail</a>
                                                 @endif
                                             @endif
                                         </td>

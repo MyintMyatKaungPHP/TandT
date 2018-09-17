@@ -109,9 +109,9 @@ function showToggle($str){
                         </ul>
                     </li>
                     <li class=" @php echo  showToggle('between/report'); @endphp">
-                        <a href="{{route('between.report')}}" title="Dashboard">
-                            <em class="fa fa-bar-chart"></em>
-                            <span data-localize="sidebar.nav.DOCUMENTATION">Report Between</span>
+                        <a href="{{route('between.report')}}" title="Report">
+                            <em class="fa fa-file-code-o"></em>
+                            <span data-localize="sidebar.nav.REPORT">Generate Report</span>
                         </a>
                     </li>
                 @endif

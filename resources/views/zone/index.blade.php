@@ -36,7 +36,12 @@
                      </div>
                      <div class="box-text">
                         <h3>Best Places</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat urna a vehicula bibendum, cras erat ipsum.</p>
+                        <p style="text-align: justify">
+                        Our Travels and Tours team will take you to most beautiful places throughout the country and brings you the most memorable moment. The best places are chosen carefully by recommendation from the customers and survey by our local tour guides.
+                        </p>
+
+                        </p>
+
                      </div>
                   </div>
                </div>
@@ -46,8 +51,9 @@
                         <span class="flaticon-save"></span>
                      </div>
                      <div class="box-text">
-                        <h3>Comfortable Transportation</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat urna a vehicula bibendum, cras erat ipsum.</p>
+                        <h3>Routes</h3>
+                        <p style="text-align: justify">
+                           We offer you tour packages which you can choose from various routes of any city. </p>
                      </div>
                   </div>
                </div>
@@ -57,8 +63,10 @@
                         <span class="flaticon-big-flag-waving"></span>
                      </div>
                      <div class="box-text">
-                        <h3>Peaceful Hotels</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat urna a vehicula bibendum, cras erat ipsum.</p>
+                        <h3>Hotels</h3>
+                        <p style="text-align: justify">
+                           Our partnerships hotels include from 3 to 5 stars hotels which are also chosen by our tour survey team for users' convenience and satisfaction.
+                        </p>
                      </div>
                   </div>
                </div>
@@ -88,10 +96,13 @@
                <div class="col-md-6 col-sm-6 col-xs-12 pdl100">
                   <div class="sec-title">
                      <h2>VIDEO OF ZONE TOUR</h2>
-                     <span class="tagline">Proin commodo, elit in iaculis laoreet.</span>
+                     <span class="tagline">Golden Land Myanmar</span>
                   </div>
-                  <p>Fusce lobortis elit est, aliquam pulvinar ex vestibulum ut. Etiam tincidunt tempor massa, sed consectetur eros rutrum et. Nunc sit amet faucibus justo. Cras interdum velit vitae lectus imperdiet, vitae egestas neque accumsan. Sed sed turpis nulla. Phasellus a volutpat ipsum, vitae rhoncus lorem.</p>
-                  <a href="#" class="btn zt-primary btn-read-more">Read more</a>
+                  {{--<p style="text-align: justify">Myanmar, or Burma, officially the Republic of the Union--}}
+                     {{--of Myanmar which is derived from the Burmese Empire (1500-1000BC) is a country in--}}
+                     {{--Southeast Asia. It lies on the Bay of Bengal and Andaman Sea coast with Bangladesh and--}}
+                     {{--India to the west, China to the north, and Laos and Thailand to the east. </p>--}}
+                  {{--<a href="#" class="btn zt-primary btn-read-more">Read more</a>--}}
                </div>
             </div>
          </div>
@@ -102,7 +113,7 @@
          <div class="zt-container">
             <div class="sec-title text-center sec-title-padding">
                <h2>Special Tour Packages</h2>
-               <span class="tagline">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</span>
+
                <span class="img-border"></span>
             </div>
             <div class="row">
@@ -114,21 +125,8 @@
                      <div class="text-box position-relative">
                         <span class="angle-up"></span>
                         <h3>Sweet Love On The Beach</h3>
-                        <p>Honeymoon</p>
+                        <p>Honeymoon Trips</p>
                         <a href="{{route('search_package_type','honeymoon')}}" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-12 col-xs-12">
-                  <div class="single-latest-news">
-                     <div class="img-box">
-                        <img src="{{asset('images/blog/cool-place-visit-full-house.png')}}" alt=""/>
-                     </div>
-                     <div class="text-box position-relative">
-                        <span class="angle-up"></span>
-                        <h3>Vacation Trip</h3>
-                        <p>Etiam mattis, tortor non tincidunt euismod, ipsum arcu condimentum ligula, at ornare dolor turpis id massa. Ut sit amet augue lobortis lacus scelerisque volutpat.</p>
-                        <a href="{{route('search_package_type','vacation')}}" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
                      </div>
                   </div>
                </div>
@@ -139,8 +137,21 @@
                      </div>
                      <div class="text-box position-relative">
                         <span class="angle-up"></span>
-                        <h3>Sightseeing Trip</h3>
-                        <p>Etiam mattis, tortor non tincidunt euismod, ipsum arcu condimentum ligula, at ornare dolor turpis id massa. Ut sit amet augue lobortis lacus scelerisque volutpat.</p>
+                        <h3>Summer special</h3>
+                        <p>Vacation Trips</p>
+                        <a href="{{route('search_package_type','vacation')}}" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="single-latest-news">
+                     <div class="img-box">
+                        <img src="{{asset('images/blog/cool-place-visit-full-house.png')}}" alt=""/>
+                     </div>
+                     <div class="text-box position-relative">
+                        <span class="angle-up"></span>
+                        <h3> City's Attractions </h3>
+                        <p>Sightseeing Trips</p>
                         <a href="{{route('search_package_type','sightseeing')}}" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
                      </div>
                   </div>

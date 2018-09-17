@@ -56,7 +56,12 @@ class admin_Booking_Controller extends Controller
      */
     public function show($id)
     {
-        //
+        if(Auth::check()){
+            $booking = bookings::find($id);
+            return view('dashboard.booking.detail',compact('booking'));
+        }else{
+            return redirect(route('login'));
+        }
     }
 
     /**

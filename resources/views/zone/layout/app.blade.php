@@ -154,6 +154,95 @@
                     </ul>
                 </div>
             </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="footer-widget gallery-widget">
+                    <div class="title">
+                        <h3>GALLERY</h3>
+                    </div>
+                    <ul id="gallerywidget" class="list-unstyled">
+                        <li data-src="{{asset('images/l_t_i/bagan1.jpg')}}">
+                            <a href="#">
+                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                        <span class="fa fa-plus"></span>
+                                    </div>
+                                    <img src="{{asset('images/l_t_i/bagan1.jpg')}}" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                        <li data-src="{{asset('images/l_t_i/beach2.jpg')}}">
+                            <a href="#">
+                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                        <span class="fa fa-plus"></span>
+                                    </div>
+                                    <img src="{{asset('images/l_t_i/beach2.jpg')}}" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                        <li data-src="{{asset('images/l_t_i/inle.jpg')}}">
+                            <a href="#">
+                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                        <span class="fa fa-plus"></span>
+                                    </div>
+                                    <img src="{{asset('images/l_t_i/inle.jpg')}}" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                        <li data-src="{{asset('images/l_t_i/palace.jpg')}}">
+                            <a href="#">
+                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                        <span class="fa fa-plus"></span>
+                                    </div>
+                                    <img src="{{asset('images/l_t_i/palace.jpg')}}" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                        <li data-src="{{asset('images/l_t_i/shwe_dagon_pagoda.jpg')}}">
+                            <a href="#">
+                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                        <span class="fa fa-plus"></span>
+                                    </div>
+                                    <img src="{{asset('images/l_t_i/shwe_dagon_pagoda.jpg')}}" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                        <li data-src="{{asset('images/l_t_i/inle-lake.jpg')}}">
+                            <a href="#">
+                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                        <span class="fa fa-plus"></span>
+                                    </div>
+                                    <img src="{{asset('images/l_t_i/inle-lake.jpg')}}" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                        <li data-src="{{asset('images/l_t_i/U-Bein-bridge.jpg')}}">
+                            <a href="#">
+                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                        <span class="fa fa-plus"></span>
+                                    </div>
+                                    <img src="{{asset('images/l_t_i/U-Bein-bridge.jpg')}}" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                        <li data-src="{{asset('images/l_t_i/yangon.jpg')}}">
+                            <a href="#">
+                                <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                    <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                        <span class="fa fa-plus"></span>
+                                    </div>
+                                    <img src="{{asset('images/l_t_i/yangon.jpg')}}" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
