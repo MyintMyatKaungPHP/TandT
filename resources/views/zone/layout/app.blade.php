@@ -52,33 +52,6 @@
     <link rel="stylesheet" href="{{asset('zone_asset/css/skin/skin-default.css')}}">
     <!-- favicon -->
     <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
-    {{--<!-- Facebook Pixel Code -->--}}
-    {{--<script>--}}
-    {{--!function (f, b, e, v, n, t, s)--}}
-    {{--{--}}
-    {{--if (f.fbq)--}}
-    {{--return;--}}
-    {{--n = f.fbq = function () {--}}
-    {{--n.callMethod ?--}}
-    {{--n.callMethod.apply(n, arguments) : n.queue.push(arguments)--}}
-    {{--};--}}
-    {{--if (!f._fbq)--}}
-    {{--f._fbq = n;--}}
-    {{--n.push = n;--}}
-    {{--n.loaded = !0;--}}
-    {{--n.version = '2.0';--}}
-    {{--n.queue = [];--}}
-    {{--t = b.createElement(e);--}}
-    {{--t.async = !0;--}}
-    {{--t.src = v;--}}
-    {{--s = b.getElementsByTagName(e)[0];--}}
-    {{--s.parentNode.insertBefore(t, s)--}}
-    {{--}(window, document, 'script', '../../connect.facebook.net/en_US/fbevents.js');--}}
-    {{--fbq('init', '348669228917290');--}}
-    {{--fbq('track', 'PageView');--}}
-    {{--</script>--}}
-    {{--<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=348669228917290&amp;ev=PageView&amp;noscript=1"/></noscript>--}}
-    {{--<!-- End Facebook Pixel Code -->--}}
 </head>
 <body>
 <div id="top-bar" class="hidden-sm hidden-xs home">
@@ -132,36 +105,6 @@
     </div>
 </div>
 @include('zone.layout.menu')
-
-{{--<section class="filter-tour">--}}
-{{--<div class="filter-wrap">--}}
-{{--<form class="form-inline filter-box">--}}
-{{--<div class="form-group">--}}
-{{--<select name="city" class="zt-control">--}}
-{{--<option value="">Select Tour</option>--}}
-{{--<option value="">Yangon</option>--}}
-{{--<option value="">Mandalay</option>--}}
-{{--<option value="">Bangkok</option>--}}
-{{--</select>--}}
-{{--<span class="select-arrow"></span>--}}
-{{--</div>--}}
-{{----}}
-{{--<div class="form-group">--}}
-{{--<div class="input-icon">--}}
-{{--<input type="text" class="zt-control datetimepicker"  placeholder="Check in"/>--}}
-{{--<div class="input-addon"><span class="fa fa-calendar"></span></div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--<div class="form-group">--}}
-{{--<input type="number" class="zt-control"  placeholder="Adults" min="1" max="100" />--}}
-{{--</div>--}}
-{{--<div class="form-group">--}}
-{{--<input type="number" class="zt-control"  placeholder="Childs" min="1" max="100" >--}}
-{{--</div>--}}
-{{--<button type="submit" class="btn zt-primary btn-lg">BOOK NOW</button>--}}
-{{--</form>--}}
-{{--</div>--}}
-{{--</section>--}}
 @yield('content')
 <footer id="footer" class="sec-padding">
     <div class="zt-container">
@@ -187,119 +130,30 @@
                         <h3>LINKS</h3>
                     </div>
                     <ul>
-                        <li><a href="#">Top Tour</a></li>
-                        <li><a href="#">New Travel</a></li>
-                        <li><a href="#">How - To</a></li>
-                        <li><a href="#">Tips and Tricks</a></li>
-                        <li><a href="#">Best Tour</a></li>
-                        <li><a href="#">Top Travel</a></li>
+                        <li><a href="{{route('zone')}}">Home</a></li>
+                        <li><a href="{{route('packages')}}">Tour Packages</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="{{route('aboutus')}}">About Us</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
+
                     </ul>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-2 col-sm-6 col-xs-12">
                 <div class="footer-widget post-link-widget">
                     <div class="title">
-                        <h3>USEFUL LINKS</h3>
+                        <h3>HOTEL LINKS</h3>
                     </div>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">New Latest</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Destinations</a></li>
-                        <li><a href="#">Company</a></li>
+                        <li><a href="http://www.shangri-la.com/yangon">Sule Shangri-la</a></li>
+                        <li><a href="http://www.sedonahotels.com.sg/yangon">Sedona Yangon</a></li>
+                        <li><a href="https://www.accorhotels.com/gb/hotel-9045-novotel-yangon-max/index.shtml">Novotel</a></li>
+                        <li><a href="http://hotelmandalaymyanmar.com/">Hotel Mandalay</a></li>
+                        <li><a href="https://royalstarhotel.business.site/">Royal Star Hotel</a></li>
+                        <li><a href="https://www.shwekyunhotel-myanmar.com/en-us">Shwe Kyun Hotel</a></li>
                     </ul>
                 </div>
             </div>
-            {{--<div class="col-md-4 col-sm-6 col-xs-12">--}}
-                {{--<div class="footer-widget gallery-widget">--}}
-                    {{--<div class="title">--}}
-                        {{--<h3>GALLERY</h3>--}}
-                    {{--</div>--}}
-                    {{--<ul id="gallerywidget" class="list-unstyled">--}}
-                        {{--<li data-src="{{asset('images/tour/3.jpg')}}">--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
-                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
-                                        {{--<span class="fa fa-plus"></span>--}}
-                                    {{--</div>--}}
-                                    {{--<img src="{{asset('images/thumbnails/oia-santorini-greece-sunset-island-sea-tourism-1.png')}}" alt="" />--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li data-src="{{asset('images/tour/2.jpg')}}">--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
-                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
-                                        {{--<span class="fa fa-plus"></span>--}}
-                                    {{--</div>--}}
-                                    {{--<img src="{{asset('images/thumbnails/colorful-houses-with-sunshades.png')}}" alt="" />--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li data-src="{{asset('images/tour/1.jpg')}}">--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
-                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
-                                        {{--<span class="fa fa-plus"></span>--}}
-                                    {{--</div>--}}
-                                    {{--<img src="{{asset('images/thumbnails/india-taj-mahal-agra-architecture-travel.png')}}" alt="" />--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li data-src="{{asset('images/tour/4.jpg')}}">--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
-                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
-                                        {{--<span class="fa fa-plus"></span>--}}
-                                    {{--</div>--}}
-                                    {{--<img src="{{asset('images/thumbnails/santorini-greece.png')}}" alt="" />--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li data-src="{{asset('images/tour/5.jpg')}}">--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
-                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
-                                        {{--<span class="fa fa-plus"></span>--}}
-                                    {{--</div>--}}
-                                    {{--<img src="{{asset('images/thumbnails/pisa-tower.png')}}" alt="" />--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li data-src="{{asset('images/tour/building-ocean-buildings.jpg')}}">--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
-                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
-                                        {{--<span class="fa fa-plus"></span>--}}
-                                    {{--</div>--}}
-                                    {{--<img src="{{asset('images/thumbnails/toronto.jpg')}}" alt="" />--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li data-src="{{asset('images/tour/tram-city-urban-transport-transportation-travel.jpg')}}">--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
-                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
-                                        {{--<span class="fa fa-plus"></span>--}}
-                                    {{--</div>--}}
-                                    {{--<img src="{{asset('images/thumbnails/tram-city-urban-transport-transportation-travel.png')}}" alt="" />--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li data-src="{{asset('images/tour/6.jpg')}}">--}}
-                            {{--<a href="#">--}}
-                                {{--<div class="gallery-wrap zt-overlay zt-overlay-hover">--}}
-                                    {{--<div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">--}}
-                                        {{--<span class="fa fa-plus"></span>--}}
-                                    {{--</div>--}}
-                                    {{--<img src="{{asset('images/thumbnails/arno-river-florence-italy-reflection-river.png')}}" alt="" />--}}
-                                {{--</div>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</div>--}}
         </div>
     </div>
 </footer>
@@ -308,28 +162,7 @@
         <div class="row">
             <div class="col-md-5 col-sm-12 col-xs-12">
                 <div class="left-text">
-                    @2016 Zone Tour
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-12 col-xs-12">
-                <div class="right-text pull-right">
-                    <ul class="menu-footer ">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="{{route('packages')}}">Packages</a>
-                        </li>
-                        <li>
-                            <a href="#">Blog</a>
-                        </li>
-                        <li>
-                            <a href="#">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
+                    @2018 Zone Travels & Tours
                 </div>
             </div>
         </div>

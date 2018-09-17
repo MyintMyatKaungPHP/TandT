@@ -18,13 +18,19 @@ class user_Booking_Controller extends Controller
      */
 
     public function bookingForm(){
-        $package = packages::find(request()->package_id);
-        $route = routes::find(request()->route_id);
-        $hotel = hotels::find(request()->hotel_id);
-        $hotel_cost = $hotel->price * $package->duration;
-        $estimate_total = $package->price + $route->price + $hotel_cost;
-        return view('zone.booking_form',compact('package','route','estimate_total','hotel','hotel_cost'));
+        if(Auth::check()){
+            $package = packages::find(request()->package_id);
+            $route = routes::find(request()->route_id);
+            $hotel = hotels::find(request()->hotel_id);
+            $hotel_cost = $hotel->price * $package->duration;
+            $estimate_total = $package->price + $route->price + $hotel_cost;
+            return view('zone.booking_form',compact('package','route','estimate_total','hotel','hotel_cost'));
+        }else{
+            return redirect(route('login'));
+        }
+
     }
+
 
     public function index()
     {
@@ -32,9 +38,26 @@ class user_Booking_Controller extends Controller
     }
 
     public function goBookingList($id){
+        if(Auth::check()){
+            $bookings = bookings::where('user_id',$id)->orderBy('id')->get();
+            return view('zone.booking_list',compact('bookings'));
+        }else{
+            return redirect(route('login'));
+        }
 
-        $bookings = bookings::where('user_id',$id)->get();
-        return view('zone.booking_list',compact('bookings'));
+    }
+
+    public function BookingSuccess($id,$uid){
+        if(Auth::check()){
+            $booking = bookings::find($id);
+            $booking -> status = 'confirm';
+            $booking -> save();
+            $bookings = bookings::where('user_id',$uid)->orderBy('id')->get();
+            return view('zone.booking_list',compact('bookings'));
+        }else{
+            return redirect(route('login'));
+        }
+
     }
 
     /**
@@ -76,7 +99,13 @@ class user_Booking_Controller extends Controller
      */
     public function show($id)
     {
-        return view('zone.booking_detail');
+        if(Auth::check()){
+            $booking = bookings::find($id);
+            return view('zone.booking_detail',compact('booking'));
+        }else{
+            return redirect(route('login'));
+        }
+
     }
 
     /**
@@ -87,6 +116,14 @@ class user_Booking_Controller extends Controller
      */
     public function edit($id)
     {
+        if(Auth::check()){
+            $booking = bookings::find($id);
+            $hotel_cost = $booking->hotels->price * $booking->packages->duration;
+            $estimate_total =$booking->packages->price + $booking->routes->price + $hotel_cost;
+            return view('zone.booking_update',compact('booking','hotel_cost','estimate_total'));
+        }else{
+            return redirect(route('login'));
+        }
 
     }
 
@@ -99,7 +136,15 @@ class user_Booking_Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $booking = bookings::find($id);
+        $booking->departure_date = request()->departure_date;
+        $booking->qty = request()->qty;
+        $booking->user_msg = request()-> user_msg;
+        $booking->total_price = request()->estimate_total*request()->qty;
+        $booking->status='pending';
+        $booking->save();
+        return redirect(route('goBookingList',Auth::id()));
+
     }
 
     /**
@@ -110,6 +155,6 @@ class user_Booking_Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

@@ -16,47 +16,45 @@
                         @include('zone.layout.error')
                         <table class="table table-striped">
                             <tr>
-                                <th>Tour Package</th>
-                                <td>Shwe Inle</td>
+                                <th width="200px">Tour Package</th>
+                                <td>{{$booking->packages->title}}</td>
                             </tr>
                             <tr>
                                 <th>Route Information</th>
-                                <td>Yangon -> Taung Gyi</td>
+                                <td>{{$booking->routes->from_city}} -> {{$booking->routes->to_city}}</td>
                             </tr>
                             <tr>
                                 <th>Transport Type</th>
-                                <td>Car</td>
+                                <td>{{$booking->routes->type}}</td>
                             </tr>
                             <tr>
                                 <th>Hotel Name</th>
-                                <td>Hotel Max (Inle)</td>
+                                <td>{{$booking->hotels->name}}</td>
                             </tr>
                             <tr>
                                 <th>Departure Date</th>
-                                <td>13-sept-2018</td>
+                                <td>{{$booking->departure_date}}</td>
                             </tr>
                             <tr>
                                 <th>Number of people</th>
-                                <td>3</td>
+                                <td>{{$booking->qty}}</td>
                             </tr>
                             <tr>
                                 <th>Estimate Price</th>
-                                <td>3000</td>
+                                <td>{{$booking->total_price}}</td>
                             </tr>
                             <tr>
                                 <th>Confirm Price</th>
-                                <td>3200</td>
+                                <td>{{$booking->confirm_price}}</td>
                             </tr>
                             <tr>
                                 <th>Status</th>
-                                <td>Confirm</td>
+                                <td>{{$booking->status}}</td>
                             </tr>
                             <tr>
                                 <th>Admin Message</th>
                                 <td>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam aspernatur assumenda
-                                    debitis distinctio dolor esse hic nemo nihil numquam quisquam saepe, sit totam ut veniam vero
-                                    voluptatibus. Necessitatibus, quis.
+                                    {{$booking->admin_msg}}
                                 </td>
                             </tr>
                         </table>

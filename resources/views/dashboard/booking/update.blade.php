@@ -131,7 +131,7 @@
                                     <b>Message to Customer</b>
                                 </div>
                                 <div class="col-xl-10">
-                                    <textarea name="admin_msg" id="" rows="10" class="form-control"></textarea>
+                                    <textarea name="admin_msg" id="" rows="10" class="form-control">{{$booking->admin_msg}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">

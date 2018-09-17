@@ -29,6 +29,9 @@ Route::resource('manage_route','route_Controller');
 //manage booking
 Route::resource('manage_booking','admin_Booking_Controller');
 
+//Between Given Date
+Route::get('between/report','admin_Booking_Controller@showBetweenReport')->name('between.report');
+Route::post('between/report','admin_Booking_Controller@betweenReport');
 // Website //
 //index page
 Route::get('zone','zone_Controller@index')->name('zone');
@@ -38,6 +41,12 @@ Route::get('/packages','zone_Controller@packages')->name('packages');
 
 //package detail page
 Route::get('/package_detail/{id}','zone_Controller@package_detail')->name('package_detail');
+
+//about us page
+Route::get('aboutus','zone_Controller@aboutus')->name('aboutus');
+
+//contact us page
+Route::get('contactus','zone_Controller@contact')->name('contact');
 
 //registration
 Route::resource('user/registration','user_Controller');
@@ -65,6 +74,7 @@ Route::get('search/packages_type/{type}','search_Controller@packages_type')->nam
 Route::resource('user_booking','user_Booking_Controller');
 Route::get('user_booking/list/{id}','user_Booking_Controller@goBookingList')->name('goBookingList');
 Route::post('user_booking/form','user_Booking_Controller@bookingForm')->name('bookingForm');
+Route::get('user_booking/success/{id}/{uid}','user_Booking_Controller@BookingSuccess')->name('BookingSuccess');
 
 
 

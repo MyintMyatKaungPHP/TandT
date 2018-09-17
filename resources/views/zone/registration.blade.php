@@ -20,7 +20,7 @@
                         <form class="form filter-box" enctype="multipart/form-data" action="{{route('registration.store')}}" method="post">
                             {{csrf_field()}}
                             <div class="row">
-                                <div class="col-md-4 col-sm-5 col-xs-12">
+                                <div class="col-md-3 col-sm-5 col-xs-12">
                                     <div class="form-group">
                                         <div class="input-icon">
                                             <input type="text" class="zt-control" placeholder="Name" name="name">
@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-5 col-xs-12">
+                                <div class="col-md-3 col-sm-5 col-xs-12">
                                     <div class="form-group">
                                         <div class="input-icon">
                                             <input type="file" class="zt-control" name="image">
@@ -36,7 +36,15 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-5 col-xs-12">
+                                <div class="col-md-3 col-sm-5 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="input-icon">
+                                            <input type="text" class="zt-control" maxlength="11" placeholder="Bank Card Number" name="bank_id">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-5 col-xs-12">
                                     <div class="form-group">
                                         <div class="input-icon">
                                             <input type="text" class="zt-control" maxlength="11" placeholder="Phone" name="phone">

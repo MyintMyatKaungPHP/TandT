@@ -22,17 +22,24 @@
                             {{csrf_field()}}
                             {{method_field('PUT')}}
                             <div class="row">
-                                <div class="col-md-6 col-sm-5 col-xs-12">
+                                <div class="col-md-4 col-sm-5 col-xs-12">
                                     <div class="form-group">
                                         <div class="input-icon">
                                             <input type="text" class="zt-control" placeholder="Name" value="{{Auth::user()->name}}" name="name">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-5 col-xs-12">
+                                <div class="col-md-4 col-sm-5 col-xs-12">
                                     <div class="form-group">
                                         <div class="input-icon">
                                             <input type="email" class="zt-control" placeholder="Email" value="{{Auth::user()->email}}" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-5 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="input-icon">
+                                            <input type="text" class="zt-control" placeholder="Bank ID" value="{{Auth::user()->bank_id}}" name="bank_id">
                                         </div>
                                     </div>
                                 </div>

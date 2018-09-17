@@ -159,7 +159,7 @@
             <div class="row">
                @foreach($packages as $p)
                   <div class="col-md-4 col-sm-6 col-xs-6">
-                     <div class="tour-list-box text-center">
+                     <div class="tour-list-box text-center" style="height: 500px;">
                         <div class="img-box zt-overlay">
                            <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
                               <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
@@ -181,7 +181,7 @@
                         </div>
                         <div class="box-content">
                            <h3>{{$p->title}}</h3>
-                           <div class="excert" style="height: 60px;">
+                           <div class="excert">
                                <?php
                                  echo strip_tags(substr($p->description,0,100));
                                  echo "...";

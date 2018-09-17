@@ -60,13 +60,23 @@
                                         <td>{{$b->hotels->name}}</td>
                                         <td>{{$b->status}}</td>
                                         <td class="text-center">
-                                            <a href="{{route('manage_booking.edit',$b->id)}}" class="badge badge-info">Reply</a>
+
                                             @if(Auth::user()->role=='admin')
-                                                <form action="{{route('manage_booking.destroy',$b->id)}}" class="d-inline" method="post" >
-                                                    {{csrf_field()}}
-                                                    {{method_field('Delete')}}
-                                                    <button class="badge badge-danger" type="submit">Cancel</button>
-                                                </form>
+                                                @if($b->status == 'pending')
+                                                    <a href="{{route('manage_booking.edit',$b->id)}}" class="badge badge-info">Reply</a>
+                                                    <form action="{{route('manage_booking.destroy',$b->id)}}" class="d-inline" method="post" >
+                                                        {{csrf_field()}}
+                                                        {{method_field('Delete')}}
+                                                        <button class="badge badge-danger" type="submit">Cancel</button>
+                                                    </form>
+                                                @endif
+                                                @if($b->status == 'acknowledge')
+                                                    <form action="{{route('manage_booking.destroy',$b->id)}}" class="d-inline" method="post" >
+                                                        {{csrf_field()}}
+                                                        {{method_field('Delete')}}
+                                                        <button class="badge badge-danger" type="submit">Cancel</button>
+                                                    </form>
+                                                @endif
                                             @endif
                                         </td>
                                     </tr>

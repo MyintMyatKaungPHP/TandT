@@ -108,6 +108,12 @@ function showToggle($str){
                             </li>
                         </ul>
                     </li>
+                    <li class=" @php echo  showToggle('between/report'); @endphp">
+                        <a href="{{route('between.report')}}" title="Dashboard">
+                            <em class="fa fa-bar-chart"></em>
+                            <span data-localize="sidebar.nav.DOCUMENTATION">Report Between</span>
+                        </a>
+                    </li>
                 @endif
 
                 {{-- Go To Website (front-end) --}}

@@ -20,6 +20,10 @@
     <!-- =============== APP STYLES ===============-->
     <link rel="stylesheet" href="{{asset('dashboard_asset/css/app.css')}}" id="maincss">
     <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
+    <!-- Datatables-->
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/datatables.net-bs4/css/dataTables.bootstrap4.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/datatables.net-keytable-bs/css/keyTable.bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard_asset/vendor/datatables.net-responsive-bs/css/responsive.bootstrap.css')}}">
     @yield('css')
 </head>
 
@@ -183,7 +187,8 @@
 <script src="{{asset('dashboard_asset/vendor/jquery-localize/dist/jquery.localize.js')}}"></script>
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
 <!-- =============== APP SCRIPTS ===============-->
-<script src="{{asset('dashboard_asset/js/app.js')}}"></script>
+
 @yield('script')
+<script src="{{asset('dashboard_asset/js/app.js')}}"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@ class zone_Controller extends Controller
         $packages = packages::where('del_status','0')->orderBy('id', 'desc')->limit(6)->get();
         return view('zone.index',compact('packages','cities'));
     }
+
     protected function packages(){
         $packages = packages::where('del_status','0')->paginate(6);
         return view('zone.packages',compact('packages'));
@@ -36,6 +37,15 @@ class zone_Controller extends Controller
         $package_id = $id;
 
         return view('zone.package_detail',compact('routes','package','hotels','to_city','from_city','package_id'));
+    }
+
+    protected function aboutus()
+    {
+        return view('zone.about');
+    }
+    protected function contact()
+    {
+        return view('zone.contact');
     }
 
     public function travelType($from_city,$to_city){

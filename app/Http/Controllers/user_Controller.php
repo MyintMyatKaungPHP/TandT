@@ -64,6 +64,7 @@ class user_Controller extends Controller
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->image = $image_name;
+        $user->bank_id = $request->bank_id;
         $user->save();
         return redirect(route('login'))->with('status','Registration Success!');
     }
@@ -146,6 +147,7 @@ class user_Controller extends Controller
         $user->phone = $phone;
         $user->address = $request->address;
         $user->image = $image_name;
+        $user->bank_id = $request->bank_id;
         $user->save();
         return redirect(route('user.profile'))->with('status','Profile Updating Success!');
 

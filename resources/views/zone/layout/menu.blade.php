@@ -18,10 +18,10 @@
                         <a href="">Gallery</a>
                     </li>
                     <li>
-                        <a href="">About</a>
+                        <a href="{{route('aboutus')}}">About</a>
                     </li>
                     <li>
-                        <a href="">Contact</a>
+                        <a href="{{route('contact')}}">Contact</a>
                     </li>
                 </ul>
             </div>

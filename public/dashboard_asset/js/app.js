@@ -862,67 +862,69 @@
 
 })(window, document, window.jQuery);
 
-// CHART BAR
-// -----------------------------------
-(function(window, document, $, undefined) {
-
-    $(function() {
-
-        var data = [{
-            "label": "Sales",
-            "color": "#9cd159",
-            "data": [
-                ["Jan", 27],
-                ["Feb", 82],
-                ["Mar", 56],
-                ["Apr", 14],
-                ["May", 28],
-                ["Jun", 77],
-                ["Jul", 23],
-                ["Aug", 49],
-                ["Sep", 81],
-                ["Oct", 20]
-            ]
-        }];
-
-        var options = {
-            series: {
-                bars: {
-                    align: 'center',
-                    lineWidth: 0,
-                    show: true,
-                    barWidth: 0.6,
-                    fill: 0.9
-                }
-            },
-            grid: {
-                borderColor: '#eee',
-                borderWidth: 1,
-                hoverable: true,
-                backgroundColor: '#fcfcfc'
-            },
-            tooltip: true,
-            tooltipOpts: {
-                content: function(label, x, y) { return x + ' : ' + y; }
-            },
-            xaxis: {
-                tickColor: '#fcfcfc',
-                mode: 'categories'
-            },
-            yaxis: {
-                // position: 'right' or 'left'
-                tickColor: '#eee'
-            },
-            shadowSize: 0
-        };
-
-        var chart = $('.chart-bar');
-        if (chart.length)
-            $.plot(chart, data, options);
-
-    });
-
-})(window, document, window.jQuery);
+// // CHART BAR
+// // -----------------------------------
+// (function(window, document, $, undefined) {
+//
+//     $(function() {
+//
+//         var data = [{
+//             "label": "Sales",
+//             "color": "#9cd159",
+//             "data": [
+//                 ["Jan", 27],
+//                 ["Feb", 82],
+//                 ["Mar", 56],
+//                 ["Apr", 14],
+//                 ["May", 28],
+//                 ["Jun", 77],
+//                 ["Jul", 23],
+//                 ["Aug", 49],
+//                 ["Sep", 81],
+//                 ["Oct", 20],
+//                 ["Nov", 30],
+//                 ["DEC", 50]
+//             ]
+//         }];
+//
+//         var options = {
+//             series: {
+//                 bars: {
+//                     align: 'center',
+//                     lineWidth: 0,
+//                     show: true,
+//                     barWidth: 0.6,
+//                     fill: 0.9
+//                 }
+//             },
+//             grid: {
+//                 borderColor: '#eee',
+//                 borderWidth: 1,
+//                 hoverable: true,
+//                 backgroundColor: '#fcfcfc'
+//             },
+//             tooltip: true,
+//             tooltipOpts: {
+//                 content: function(label, x, y) { return x + ' : ' + y; }
+//             },
+//             xaxis: {
+//                 tickColor: '#fcfcfc',
+//                 mode: 'categories'
+//             },
+//             yaxis: {
+//                 // position: 'right' or 'left'
+//                 tickColor: '#eee'
+//             },
+//             shadowSize: 0
+//         };
+//
+//         var chart = $('.chart-bar');
+//         if (chart.length)
+//             $.plot(chart, data, options);
+//
+//     });
+//
+// })(window, document, window.jQuery);
 
 
 // CHART BAR STACKED
@@ -1222,137 +1224,82 @@
 
 // CHART PIE
 // -----------------------------------
-(function(window, document, $, undefined) {
 
-    $(function() {
-
-        var data = [{
-            "label": "jQuery",
-            "color": "#4acab4",
-            "data": 30
-        }, {
-            "label": "CSS",
-            "color": "#ffea88",
-            "data": 40
-        }, {
-            "label": "LESS",
-            "color": "#ff8153",
-            "data": 90
-        }, {
-            "label": "SASS",
-            "color": "#878bb6",
-            "data": 75
-        }, {
-            "label": "Jade",
-            "color": "#b2d767",
-            "data": 120
-        }];
-
-        var options = {
-            series: {
-                pie: {
-                    show: true,
-                    innerRadius: 0,
-                    label: {
-                        show: true,
-                        radius: 0.8,
-                        formatter: function(label, series) {
-                            return '<div class="flot-pie-label">' +
-                                //label + ' : ' +
-                                Math.round(series.percent) +
-                                '%</div>';
-                        },
-                        background: {
-                            opacity: 0.8,
-                            color: '#222'
-                        }
-                    }
-                }
-            }
-        };
-
-        var chart = $('.chart-pie');
-        if (chart.length)
-            $.plot(chart, data, options);
-
-    });
-
-})(window, document, window.jQuery);
 // Morris
 // -----------------------------------
 
-(function(window, document, $, undefined) {
-
-    $(function() {
-
-        if (typeof Morris === 'undefined') return;
-
-        var chartdata = [
-            { y: "2006", a: 100, b: 90 },
-            { y: "2007", a: 75, b: 65 },
-            { y: "2008", a: 50, b: 40 },
-            { y: "2009", a: 75, b: 65 },
-            { y: "2010", a: 50, b: 40 },
-            { y: "2011", a: 75, b: 65 },
-            { y: "2012", a: 100, b: 90 }
-        ];
-
-        var donutdata = [
-            { label: "Download Sales", value: 12 },
-            { label: "In-Store Sales", value: 30 },
-            { label: "Mail-Order Sales", value: 20 }
-        ];
-
-        // Line Chart
-        // -----------------------------------
-
-        new Morris.Line({
-            element: 'morris-line',
-            data: chartdata,
-            xkey: 'y',
-            ykeys: ["a", "b"],
-            labels: ["Serie A", "Serie B"],
-            lineColors: ["#31C0BE", "#7a92a3"],
-            resize: true
-        });
-
-        // Donut Chart
-        // -----------------------------------
-        new Morris.Donut({
-            element: 'morris-donut',
-            data: donutdata,
-            colors: ['#f05050', '#fad732', '#ff902b'],
-            resize: true
-        });
-
-        // Bar Chart
-        // -----------------------------------
-        new Morris.Bar({
-            element: 'morris-bar',
-            data: chartdata,
-            xkey: 'y',
-            ykeys: ["a", "b"],
-            labels: ["Series A", "Series B"],
-            xLabelMargin: 2,
-            barColors: ['#23b7e5', '#f05050'],
-            resize: true
-        });
-
-        // Area Chart
-        // -----------------------------------
-        new Morris.Area({
-            element: 'morris-area',
-            data: chartdata,
-            xkey: 'y',
-            ykeys: ["a", "b"],
-            labels: ["Serie A", "Serie B"],
-            lineColors: ['#7266ba', '#23b7e5'],
-            resize: true
-        });
-
-    });
-
-})(window, document, window.jQuery);
+// (function(window, document, $, undefined) {
+//
+//     $(function() {
+//
+//         if (typeof Morris === 'undefined') return;
+//
+//         var chartdata = [
+//             { y: "2006", a: 100, b: 90 },
+//             { y: "2007", a: 75, b: 65 },
+//             { y: "2008", a: 50, b: 40 },
+//             { y: "2009", a: 75, b: 65 },
+//             { y: "2010", a: 50, b: 40 },
+//             { y: "2011", a: 75, b: 65 },
+//             { y: "2012", a: 100, b: 90 }
+//         ];
+//
+//         var donutdata = [
+//             { label: "Download Sales", value: 12 },
+//             { label: "In-Store Sales", value: 30 },
+//             { label: "Mail-Order Sales", value: 20 }
+//         ];
+//
+//         // Line Chart
+//         // -----------------------------------
+//
+//         new Morris.Line({
+//             element: 'morris-line',
+//             data: chartdata,
+//             xkey: 'y',
+//             ykeys: ["a", "b"],
+//             labels: ["Serie A", "Serie B"],
+//             lineColors: ["#31C0BE", "#7a92a3"],
+//             resize: true
+//         });
+//
+//         // Donut Chart
+//         // -----------------------------------
+//         new Morris.Donut({
+//             element: 'morris-donut',
+//             data: donutdata,
+//             colors: ['#f05050', '#fad732', '#ff902b'],
+//             resize: true
+//         });
+//
+//         // Bar Chart
+//         // -----------------------------------
+//         new Morris.Bar({
+//             element: 'morris-bar',
+//             data: chartdata,
+//             xkey: 'y',
+//             ykeys: ["a", "b"],
+//             labels: ["Series A", "Series B"],
+//             xLabelMargin: 2,
+//             barColors: ['#23b7e5', '#f05050'],
+//             resize: true
+//         });
+//
+//         // Area Chart
+//         // -----------------------------------
+//         new Morris.Area({
+//             element: 'morris-area',
+//             data: chartdata,
+//             xkey: 'y',
+//             ykeys: ["a", "b"],
+//             labels: ["Serie A", "Serie B"],
+//             lineColors: ['#7266ba', '#23b7e5'],
+//             resize: true
+//         });
+//
+//     });
+//
+// })(window, document, window.jQuery);
 // Rickshaw
 // -----------------------------------
 
@@ -4104,7 +4051,7 @@
         // Filter
 
         $('#datatable2').DataTable({
-            'paging': true, // Table pagination
+            //'paging': true, // Table pagination
             'ordering': true, // Column ordering
             'info': true, // Bottom left status text
             responsive: true,
