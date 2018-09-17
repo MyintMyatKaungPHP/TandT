@@ -15,7 +15,7 @@
                         <a href="{{route('packages')}}">Tour Packages</a>
                     </li>
                     <li>
-                        <a href="">Gallery</a>
+                        <a href="{{route('gallery')}}">Gallery</a>
                     </li>
                     <li>
                         <a href="{{route('aboutus')}}">About</a>

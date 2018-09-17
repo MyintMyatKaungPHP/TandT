@@ -4,6 +4,7 @@
     <section class="inner-banner">
         <div class="zt-container">
             <div class="box clearfix">
+                <img src="{{asset('images/map-marker.png')}}" alt="">
                 <h2>Contact Us</h2>
             </div>
         </div>

@@ -115,7 +115,7 @@
                         <h3>ABOUT US</h3>
                     </div>
                     <img class="logo-footer" src="{{asset('images/logo.png')}}" alt="" />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque bibendum efficitur. Etiam mattis, tortor non tincidunt euismod. Cras et maximus magna. Etiam mattis, tortor non tincidunt euismod. </p>
+                    <p>Zone Travels and Tours Company Limited was established in Myanmar in 2001. We provide inbound services and that are 100 percent locally owned and are licensed with the Ministry of Hotels and Tourism (number Kha-1328). Our 70-member team is well aware and equipped to meet the requirements of tourism in Myanmar.</p>
                     <ul class="social-footer">
                         <li><a href="#" target="_blank"><span class="fa fa-facebook"></span></a></li>
                         <li><a href="#" target="_blank"><span class="fa fa-twitter"></span></a></li>

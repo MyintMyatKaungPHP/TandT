@@ -16,6 +16,10 @@ class zone_Controller extends Controller
         return view('zone.index',compact('packages','cities'));
     }
 
+    protected function gallery(){
+        return view('zone.gallery');
+    }
+
     protected function packages(){
         $packages = packages::where('del_status','0')->paginate(6);
         return view('zone.packages',compact('packages'));

@@ -13,6 +13,7 @@
             <div class="col-md-12 col-sm-5 col-xs-12" >
                 <div class="destination-sidebar-wrap sidebar-box">
                     <div class="sidebar-book sidebar-content">
+                        <a href="{{route('goBookingList',Auth::id())}}" class="btn zt-primary btn-lg">Back</a>
                         @include('zone.layout.error')
                         <table class="table table-striped">
                             <tr>

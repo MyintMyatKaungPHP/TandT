@@ -51,6 +51,9 @@ Route::get('contactus','zone_Controller@contact')->name('contact');
 //registration
 Route::resource('user/registration','user_Controller');
 
+//gallery
+Route::get('/gallery','zone_Controller@gallery')->name('gallery');
+
 //login
 Route::get('user/login','login_Controller@login')->name('login');
 Route::post('user/login','login_Controller@attemptLogin')->name('attepmtLogin');
