@@ -39,20 +39,21 @@ function showToggle($str){
                     <span data-localize="sidebar.heading.HEADER">Main Navigation</span>
                 </li>
                 {{--For Dashboard--}}
-                <li class=" @php echo  showToggle('dashboard'); @endphp">
-                    <a href="{{route('dashboard')}}" title="Dashboard">
-                        <em class="fa fa-bar-chart"></em>
-                        <span data-localize="sidebar.nav.DOCUMENTATION">Dashboard</span>
-                    </a>
-                </li>
-
-                {{--For Booking--}}
-                <li class=" @php echo  showToggle('manage_booking'); @endphp">
-                    <a href="{{route('manage_booking.index')}}" title="Booking">
-                        <em class="fa fa-book"></em>
-                        <span data-localize="sidebar.nav.BOOKING">Manage Booking</span>
-                    </a>
-                </li>
+                @if(Auth::user()->role=='admin')
+                    <li class=" @php echo  showToggle('dashboard'); @endphp">
+                        <a href="{{route('dashboard')}}" title="Dashboard">
+                            <em class="fa fa-bar-chart"></em>
+                            <span data-localize="sidebar.nav.DOCUMENTATION">Dashboard</span>
+                        </a>
+                    </li>
+                @endif
+                    {{--For Booking--}}
+                    <li class=" @php echo  showToggle('manage_booking'); @endphp">
+                        <a href="{{route('manage_booking.index')}}" title="Booking">
+                            <em class="fa fa-book"></em>
+                            <span data-localize="sidebar.nav.BOOKING">Manage Booking</span>
+                        </a>
+                    </li>
 
                 {{-- For Tour Packages --}}
                 <li class=" ">
@@ -108,6 +109,8 @@ function showToggle($str){
                             </li>
                         </ul>
                     </li>
+                @endif
+                @if(Auth::user()->role=='admin' || Auth::user()->role=='editor')
                     <li class=" @php echo  showToggle('between/report'); @endphp">
                         <a href="{{route('between.report')}}" title="Report">
                             <em class="fa fa-file-code-o"></em>
@@ -129,7 +132,7 @@ function showToggle($str){
 
                 {{-- Logout button --}}
                 <li class=" ">
-                    <a href="{{route('user.logout')}}" class="btn btn-outline-danger" title="logout">
+                    <a href="{{route('user.logout')}}" class="btn btn-outline-danger" title="logout" style="width: 98%;" >
                         <em class="icon-logout"></em>
                         <span data-localize="sidebar.nav.website">Logout</span>
                     </a>

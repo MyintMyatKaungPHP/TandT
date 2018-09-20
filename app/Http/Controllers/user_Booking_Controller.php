@@ -119,9 +119,10 @@ class user_Booking_Controller extends Controller
     {
         if(Auth::check()){
             $booking = bookings::find($id);
+            $cur_date=date('Y-m-d');
             $hotel_cost = $booking->hotels->price * $booking->packages->duration;
             $estimate_total =$booking->packages->price + $booking->routes->price + $hotel_cost;
-            return view('zone.booking_update',compact('booking','hotel_cost','estimate_total'));
+            return view('zone.booking_update',compact('booking','hotel_cost','estimate_total','cur_date'));
         }else{
             return redirect(route('login'));
         }

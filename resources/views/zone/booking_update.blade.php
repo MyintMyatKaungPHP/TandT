@@ -57,7 +57,7 @@
                                         <div>
                                             <b>Choose Departure Date</b>
                                         </div>
-                                        <input type="date" class="zt-control" value="{{$booking->departure_date}}" name="departure_date" required>
+                                        <input type="date" class="zt-control" value="{{$booking->departure_date}}" min="{{$cur_date}}" name="departure_date" required>
                                     </div>
                                 </div>
                             </div>

@@ -98,6 +98,7 @@
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <button type="submit" class="btn zt-primary btn-lg btn-full">Update</button>
                                         </div>
+                        </form>
                                         @if(Auth::user()->role=='user'||Auth::user()->role=='editor')
                                             <div class="col-md-6 col-sm-12 col-xs-12">
                                                 <form action="{{route('registration.destroy',Auth::id())}}" method="post">
@@ -110,7 +111,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+
                     </div>
                 </div>
             </div>

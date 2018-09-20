@@ -327,7 +327,6 @@
          <div class="zt-container">
             <div class="sec-title text-center sec-title-padding">
                <h2>our partners</h2>
-               <span class="tagline">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</span>
                <span class="img-border"></span>
             </div>
             <div class="our-partners-carousel">

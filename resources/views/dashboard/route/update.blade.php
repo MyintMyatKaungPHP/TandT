@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-xl-2 col-form-label">To</label>
+                                <label class="col-xl-2 col-form-label">Transport Type</label>
                                 <div class="col-xl-6 col-10">
                                     <select name="type" id="select2-3" class="form-control">
                                         <option
